@@ -1,0 +1,18 @@
+﻿<UserControl x:Class="EmrInitializationTool.Views.UserControl1"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+             xmlns:local="clr-namespace:EmrInitializationTool.Views"
+             mc:Ignorable="d"  
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Style="{StaticResource ContentRoot}">
+        <mui:ModernTab Layout="Tab" SelectedSource="/Views/EmrViews/EmrExport.xaml">
+            <mui:ModernTab.Links>
+                <mui:Link DisplayName="病历导出" Source="/Views/EmrViews/EmrExport.xaml" />
+                <mui:Link DisplayName="病历导入" Source="/Views/EmrViews/EmrInport.xaml"/>
+            </mui:ModernTab.Links>
+        </mui:ModernTab>
+    </Grid>
+</UserControl>
