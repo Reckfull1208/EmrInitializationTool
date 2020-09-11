@@ -1,0 +1,1386 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>HWKJ.Common</name>
+    </assembly>
+    <members>
+        <member name="T:HWKJ.Common.CodeLengthAttribute">
+            <summary>
+            自定义枚举中编码长度的特性-未启用
+            </summary>
+        </member>
+        <member name="P:HWKJ.Common.CodeLengthAttribute.CodeLength">
+            <summary>
+            编码长度
+            </summary>
+        </member>
+        <member name="T:HWKJ.Common.CheckAttribute">
+            <summary>
+            标识验证的特性
+            </summary>
+        </member>
+        <member name="P:HWKJ.Common.CheckAttribute.AssemblyName">
+            <summary>
+            程序集名称
+            </summary>
+        </member>
+        <member name="P:HWKJ.Common.CheckAttribute.TypeName">
+            <summary>
+            类型名称
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.CheckAttribute.#ctor(System.String,System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="assemblyName">程序集名称</param>
+            <param name="typeName">类型名称</param>
+        </member>
+        <member name="T:HWKJ.Common.Encrypt.AesEncryptor">
+            <summary>
+            用于AES标准加密的公共帮助类
+            <remarks>加密输出和解密输入均采用Base64的标准</remarks>
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Encrypt.AesEncryptor.AesEncrypt(System.String,System.String,System.Byte[])">
+            <summary>
+            AES 标准加密字符串
+            </summary>
+            <param name="encryptString">待加密字符串</param>
+            <param name="strEncrKey">密钥字符串</param>
+            <param name="iv">秘钥向量(如果为null则使用默认秘钥)</param> 
+        </member>
+        <member name="M:HWKJ.Common.Encrypt.AesEncryptor.AesEncrypt(System.String,System.Byte[],System.Byte[])">
+            <summary> 
+            AES 标准加密字符串
+            </summary> 
+            <param name="encryptString">需被加密的字符串</param> 
+            <param name="key">密钥</param>
+            <param name="iv">秘钥向量(如果为null则使用默认秘钥)</param> 
+        </member>
+        <member name="M:HWKJ.Common.Encrypt.AesEncryptor.AesDecrypt(System.String,System.String,System.Byte[])">
+            <summary> 
+            AES 标准解密字符串
+            </summary>
+            <param name="decryptString">待解密的字符串</param>
+            <param name="strDecrKey">解密密钥</param>
+            <param name="iv">秘钥向量(如果为null则使用默认秘钥)</param> 
+        </member>
+        <member name="M:HWKJ.Common.Encrypt.AesEncryptor.AesDecrypt(System.String,System.Byte[],System.Byte[])">
+            <summary> 
+            AES 标准解密字符串
+            </summary>
+            <param name="decryptString">待解密的字符串</param>
+            <param name="key">密钥</param>
+            <param name="iv">秘钥向量(如果为null则使用默认秘钥)</param> 
+        </member>
+        <member name="M:HWKJ.Common.Encrypt.AesEncryptor.GetKey(System.String)">
+            <summary>
+            从秘钥字符串中计算秘钥
+            </summary>
+        </member>
+        <member name="T:HWKJ.Common.Encrypt.AesEncryptorRi">
+            <summary>
+            用于AES(RijndaelManaged)加密的公共帮助类
+            <remarks>RijndaelManaged（AES）算法是块式加密算法</remarks>
+            <remarks>加密输出和解密输入均采用Base64的标准</remarks>
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Encrypt.AesEncryptorRi.AesEncrypt(System.String,System.String,System.Byte[])">
+            <summary>
+            AES RijndaelManaged加密
+            <remarks>RijndaelManaged（AES）算法是块式加密算法</remarks>
+            </summary>
+            <param name="encryptString">待加密字符串</param>
+            <param name="strEncrKey">密钥字符串</param>
+            <param name="iv">秘钥向量(如果为null则使用默认秘钥)</param> 
+        </member>
+        <member name="M:HWKJ.Common.Encrypt.AesEncryptorRi.AesEncrypt(System.String,System.Byte[],System.Byte[])">
+            <summary> 
+            AES RijndaelManaged加密
+            </summary> 
+            <param name="encryptString">需被加密的字符串</param> 
+            <param name="key">密钥</param>
+            <param name="iv">秘钥向量(如果为null则使用默认秘钥)</param> 
+        </member>
+        <member name="M:HWKJ.Common.Encrypt.AesEncryptorRi.AesDecrypt(System.String,System.String,System.Byte[])">
+            <summary> 
+            AES RijndaelManaged解密字符串
+            </summary>
+            <param name="decryptString">待解密的字符串</param>
+            <param name="strDecrKey">解密密钥</param>
+            <param name="iv">秘钥向量(如果为null则使用默认秘钥)</param> 
+        </member>
+        <member name="M:HWKJ.Common.Encrypt.AesEncryptorRi.AesDecrypt(System.String,System.Byte[],System.Byte[])">
+            <summary> 
+            AES RijndaelManaged解密字符串
+            </summary>
+            <param name="decryptString">待解密的字符串</param>
+            <param name="key">密钥</param>
+            <param name="iv">秘钥向量(如果为null则使用默认秘钥)</param> 
+        </member>
+        <member name="M:HWKJ.Common.Encrypt.AesEncryptorRi.AesEncryptStrream(System.IO.FileStream,System.String,System.Byte[])">
+            <summary>
+            AES RijndaelManaged加密文件流
+            </summary>
+            <param name="fs">待加密的文件流</param>
+            <param name="strEncrKey">密钥字符串</param>
+            <param name="iv">秘钥向量(如果为null则使用默认秘钥)</param> 
+        </member>
+        <member name="M:HWKJ.Common.Encrypt.AesEncryptorRi.AesEncryptStrream(System.IO.FileStream,System.Byte[],System.Byte[])">
+            <summary>
+            AES RijndaelManaged加密文件流
+            </summary>
+            <param name="fs">待加密的文件流</param>
+            <param name="key">密钥</param>
+            <param name="iv">秘钥向量(如果为null则使用默认秘钥)</param> 
+        </member>
+        <member name="M:HWKJ.Common.Encrypt.AesEncryptorRi.AesDecryptStream(System.IO.FileStream,System.String,System.Byte[])">
+            <summary>
+            AES RijndaelManaged解密文件流
+            </summary>
+            <param name="fs">待解密的文件流</param>
+            <param name="strDecrKey">密钥字符串</param>
+            <param name="iv">秘钥向量(如果为null则使用默认秘钥)</param> 
+        </member>
+        <member name="M:HWKJ.Common.Encrypt.AesEncryptorRi.AesDecryptStream(System.IO.FileStream,System.Byte[],System.Byte[])">
+            <summary>
+            AES RijndaelManaged解密文件流
+            </summary>
+            <param name="fs">待解密的文件流</param>
+            <param name="key">密钥</param>
+            <param name="iv">秘钥向量(如果为null则使用默认秘钥)</param> 
+        </member>
+        <member name="M:HWKJ.Common.Encrypt.AesEncryptorRi.GetKey(System.String)">
+            <summary>
+            从秘钥字符串中计算秘钥
+            </summary>
+        </member>
+        <member name="T:HWKJ.Common.Encrypt.DesEncryptor">
+            <summary>
+            用于DES加解密的公共帮助类
+            <remarks>加密输出和解密输入均采用Base64的标准</remarks>
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Encrypt.DesEncryptor.DesEncrypt(System.String,System.String,System.Byte[])">
+            <summary> 
+            加密字符串
+            </summary> 
+            <param name="encryptString">待加密的字符串</param> 
+            <param name="strEncrKey">密钥字符串</param>
+            <param name="iv">秘钥向量(如果为null则使用默认秘钥)</param> 
+        </member>
+        <member name="M:HWKJ.Common.Encrypt.DesEncryptor.DesEncrypt(System.String,System.Byte[],System.Byte[])">
+            <summary> 
+            加密字符串
+            </summary> 
+            <param name="encryptString">待加密的字符串</param> 
+            <param name="key">密钥</param>
+            <param name="iv">秘钥向量(如果为null则使用默认秘钥)</param> 
+        </member>
+        <member name="M:HWKJ.Common.Encrypt.DesEncryptor.DesDecrypt(System.String,System.String,System.Byte[])">
+            <summary> 
+            解密字符串
+            </summary> 
+            <param name="decryptString">待解密的字符串</param> 
+            <param name="strDecrKey">密钥字符串</param>
+            <param name="iv">秘钥向量(如果为null则使用默认秘钥)</param> 
+        </member>
+        <member name="M:HWKJ.Common.Encrypt.DesEncryptor.DesDecrypt(System.String,System.Byte[],System.Byte[])">
+            <summary> 
+            解密字符串
+            </summary> 
+            <param name="decryptString">待解密的字符串</param> 
+            <param name="key">密钥</param>
+            <param name="iv">秘钥向量(如果为null则使用默认秘钥)</param> 
+        </member>
+        <member name="M:HWKJ.Common.Encrypt.DesEncryptor.DesEncryptFile(System.String,System.String,System.String,System.Byte[])">
+            <summary>
+            加密文件
+            </summary> 
+            <param name="mInFilePath">原路径</param> 
+            <param name="mOutFilePath">加密后的文件路径</param> 
+            <param name="strEncrKey">密钥字符串</param>
+            <param name="iv">秘钥向量(如果为null则使用默认秘钥)</param> 
+        </member>
+        <member name="M:HWKJ.Common.Encrypt.DesEncryptor.DesEncryptFile(System.String,System.String,System.Byte[],System.Byte[])">
+            <summary> 
+            加密文件
+            </summary> 
+            <param name="mInFilePath">原路径</param> 
+            <param name="mOutFilePath">加密后的文件路径</param> 
+            <param name="key">密钥</param> 
+            <param name="iv">秘钥向量(如果为null则使用默认秘钥)</param> 
+        </member>
+        <member name="M:HWKJ.Common.Encrypt.DesEncryptor.DesDecryptFile(System.String,System.String,System.String,System.Byte[])">
+            <summary> 
+            解密文件
+            </summary> 
+            <param name="mInFilePath">被解密路径</param> 
+            <param name="mOutFilePath">解密后的路径</param> 
+            <param name="strDecrKey">密钥</param>
+            <param name="iv">秘钥向量(如果为null则使用默认秘钥)</param> 
+        </member>
+        <member name="M:HWKJ.Common.Encrypt.DesEncryptor.DesDecryptFile(System.String,System.String,System.Byte[],System.Byte[])">
+            <summary> 
+            解密文件
+            </summary> 
+            <param name="mInFilePath">被解密路径</param> 
+            <param name="mOutFilePath">解密后的路径</param> 
+            <param name="key">密钥</param>
+            <param name="iv">秘钥向量(如果为null则使用默认秘钥)</param> 
+        </member>
+        <member name="T:HWKJ.Common.Encrypt.EccEncryptor">
+            <summary>
+            用于ECC(椭圆曲线加密算法)加密的公共帮助类
+            <remarks>加密输出和解密输入均采用Base64的标准</remarks>
+            <remarks>https://stackoverflow.com/questions/10264770/creating-an-ecc-private-public-key-with-native-c-sharp</remarks>
+            <remarks>算法不稳定，暂不启动</remarks>
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Encrypt.EccEncryptor.EccEncrypt(System.String)">
+            <summary>
+            ECC 加密字符串
+            </summary>
+            <param name="encryptString">待加密字符串</param>
+        </member>
+        <member name="M:HWKJ.Common.Encrypt.EccEncryptor.EccDecrypt(System.String)">
+            <summary> 
+            ECC 解密字符串
+            <remarks>不能用在任意的字符串，只能是相同ECC加密的字符串</remarks>
+            </summary>
+            <param name="decryptString">待解密的字符串</param>
+        </member>
+        <member name="T:HWKJ.Common.Encrypt.EccEncryptor.Point">
+            <summary>
+            坐标结构定义
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Encrypt.EccEncryptor.GetMim(System.Int32,System.Int32)">
+            <summary>
+            获得其乘法逆元(Multiplicative Inverse Modulo)
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Encrypt.EccEncryptor.Multiply(HWKJ.Common.Encrypt.EccEncryptor.Point,System.Int32)">
+            <summary>
+            坐标乘运算
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Encrypt.EccEncryptor.Plus(HWKJ.Common.Encrypt.EccEncryptor.Point,HWKJ.Common.Encrypt.EccEncryptor.Point)">
+            <summary>
+            坐标加运算
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Encrypt.EccEncryptor.Equal(HWKJ.Common.Encrypt.EccEncryptor.Point,HWKJ.Common.Encrypt.EccEncryptor.Point)">
+            <summary>
+            判断坐标是否相同
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:HWKJ.Common.Encrypt.EccEncryptor.ReplaceLowOrderAsciiCharacters(System.String)" -->
+        <member name="M:HWKJ.Common.Encrypt.EccEncryptor.GetLowOrderAsciiCharacters(System.String)">
+            <summary>
+            把一个字符串中的下列字符替换成低序位ASCII字符
+            </summary>
+        </member>
+        <member name="T:HWKJ.Common.Encrypt.Encryptor">
+            <summary>
+            公共加解密算法帮助类
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Encrypt.Encryptor.Base64Encrypt(System.String)">
+            <summary>
+            Base64编码
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Encrypt.Encryptor.Base64Decrypt(System.String)">
+            <summary>
+            Base64解码
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Encrypt.Encryptor.Sha256(System.String)">
+            <summary>
+            SHA256函数
+            </summary>
+            <param name="str">原始字符串</param>
+            <returns>SHA256结果</returns>
+        </member>
+        <member name="M:HWKJ.Common.Encrypt.Encryptor.Sha1(System.String)">
+            <summary>
+            SHA1加密
+            </summary>
+            <param name="input">原始字符串</param>
+            <returns>SHA1结果</returns>
+        </member>
+        <member name="M:HWKJ.Common.Encrypt.Encryptor.Rc4Encrypt(System.String,System.String)">
+            <summary>
+            RC4加密
+            </summary>
+            <param name="str">待加密的字符</param>
+            <param name="ckey">密钥</param>
+        </member>
+        <member name="M:HWKJ.Common.Encrypt.Encryptor.Rc4Decrypt(System.String,System.String)">
+            <summary>
+            RC4解密
+            </summary>
+            <param name="str">待解密的字符</param>
+            <param name="ckey">密钥</param>
+        </member>
+        <member name="T:HWKJ.Common.Encrypt.Md5Helper">
+            <summary>
+            MD5帮助类
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Encrypt.Md5Helper.Md5Encode(System.String)">
+            <summary>
+            用于密码的MD5加密
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Encrypt.Md5Helper.Md5EncryptHash(System.String)">
+            <summary>
+            计算哈希值
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Encrypt.Md5Helper.FileAddMd5(System.String)">
+            <summary>
+            对给定文件路径的文件加上MD5签名
+            </summary>
+            <param name="path">要加密的文件的路径</param>
+            <returns>标签的值</returns>
+        </member>
+        <member name="M:HWKJ.Common.Encrypt.Md5Helper.CheckMd5(System.String)">
+            <summary>
+            验证给定路径的文件是否已进行MD5签名
+            </summary>
+            <param name="path"></param>
+            <returns>是否加了标签或是否标签值与内容值一致</returns>
+        </member>
+        <member name="M:HWKJ.Common.Encrypt.Md5Helper.Md5Buffer(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            计算文件的MD5值
+            </summary>
+            <param name="md5File">MD5签名文件字符数组</param>
+            <param name="index">计算起始位置</param>
+            <param name="count">计算终止位置</param>
+            <returns>计算结果</returns>
+        </member>
+        <member name="T:HWKJ.Common.Encrypt.RsaEncryptor">
+            <summary>
+            用于RSA加解密的公共帮助类
+            </summary>
+        </member>
+        <member name="T:HWKJ.Common.Encrypt.RsaEncryptor.RsaKey">
+            <summary>
+            RSA加密的密匙结构  公钥和私匙
+            </summary>
+        </member>
+        <member name="P:HWKJ.Common.Encrypt.RsaEncryptor.RsaKey.PublicKey">
+            <summary>
+            公钥
+            </summary>
+        </member>
+        <member name="P:HWKJ.Common.Encrypt.RsaEncryptor.RsaKey.PrivateKey">
+            <summary>
+            私钥
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Encrypt.RsaEncryptor.GetRasKey">
+            <summary>
+            得到RSA的解谜的密匙对
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Encrypt.RsaEncryptor.ComponentKey(System.Byte[],System.Byte[])">
+            <summary>
+            组合成密匙字符串
+            </summary>
+            <param name="b1"></param>
+            <param name="b2"></param>
+        </member>
+        <member name="M:HWKJ.Common.Encrypt.RsaEncryptor.ResolveKey(System.String,System.Byte[]@,System.Byte[]@)">
+            <summary>
+            解析密匙
+            </summary>
+            <param name="key">密匙</param>
+            <param name="b1">RSA的相应参数1</param>
+            <param name="b2">RSA的相应参数2</param>
+        </member>
+        <member name="M:HWKJ.Common.Encrypt.RsaEncryptor.EncryptString(System.String,System.String)">
+            <summary>
+            字符串加密
+            </summary>
+            <param name="source">源字符串 明文</param>
+            <param name="key">密匙</param>
+            <returns>加密遇到错误将会返回原字符串</returns>
+        </member>
+        <member name="M:HWKJ.Common.Encrypt.RsaEncryptor.DecryptString(System.String,System.String)">
+            <summary>
+            字符串解密
+            </summary>
+            <param name="encryptString">密文</param>
+            <param name="key">密钥</param>
+            <returns>遇到解密失败将会返回原字符串</returns>
+        </member>
+        <member name="M:HWKJ.Common.Encrypt.RsaEncryptor.EncryptString(System.String,BigInteger,BigInteger)">
+            <summary>
+            用指定的密匙加密 
+            </summary>
+            <param name="source">明文</param>
+            <param name="d">可以是RSACryptoServiceProvider生成的D</param>
+            <param name="n">可以是RSACryptoServiceProvider生成的Modulus</param>
+            <returns>返回密文</returns>
+        </member>
+        <member name="M:HWKJ.Common.Encrypt.RsaEncryptor.DecryptString(System.String,BigInteger,BigInteger)">
+            <summary>
+            用指定的密匙加密 
+            </summary>
+            <param name="source">密文</param>
+            <param name="e">可以是RSACryptoServiceProvider生成的Exponent</param>
+            <param name="n">可以是RSACryptoServiceProvider生成的Modulus</param>
+            <returns>返回明文</returns>
+        </member>
+        <member name="T:HWKJ.Common.Enum.InterceptedType">
+            <summary>
+            小数位截取方式
+            </summary>
+        </member>
+        <member name="F:HWKJ.Common.Enum.InterceptedType.Banker">
+            <summary>
+            银行家舍入(四舍六入五成双)
+            </summary>
+        </member>
+        <member name="F:HWKJ.Common.Enum.InterceptedType.Ceiling">
+            <summary>
+            取较大的值
+            </summary>
+        </member>
+        <member name="F:HWKJ.Common.Enum.InterceptedType.Floor">
+            <summary>
+            取较小的值
+            </summary>
+        </member>
+        <member name="F:HWKJ.Common.Enum.InterceptedType.Truncate">
+            <summary>
+            直接取整
+            </summary>
+        </member>
+        <member name="F:HWKJ.Common.Enum.InterceptedType.ChinaRound">
+            <summary>
+            四舍五入
+            </summary>
+        </member>
+        <member name="T:HWKJ.Common.Enum.EnumAdapter">
+            <summary>
+            枚举适配类
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Enum.EnumAdapter.GetDescription(System.Enum,System.Boolean)">
+            <summary>
+            扩展方法，获得枚举的Description特性
+            </summary>
+            <param name="value">枚举值</param>
+            <param name="nameInstead">当枚举值没有定义DescriptionAttribute，是否使用枚举名代替，默认是使用</param>
+            <returns>枚举的Description特性</returns>
+        </member>
+        <member name="M:HWKJ.Common.Enum.EnumAdapter.GetCodeLength(System.Enum)">
+            <summary>
+            扩展方法，获得枚举的CodeLength特性
+            </summary>
+            <param name="value">枚举值</param>
+            <returns>枚举的CodeLength特性</returns>
+        </member>
+        <member name="M:HWKJ.Common.Enum.EnumAdapter.EnumToDictionary(System.Type,System.Func{System.Enum,System.String})">
+            <summary>
+            把枚举转换为键值对集合
+            </summary>
+            <param name="enumType">枚举类型</param>
+            <param name="getText">获得值得文本</param>
+            <returns>以枚举值为key，枚举文本为value的键值对集合</returns>
+        </member>
+        <member name="M:HWKJ.Common.Enum.EnumAdapter.EnumToEnumModels(System.Type,System.Func{System.Enum,System.String})">
+            <summary>
+            把枚举转换为EnumModel列表
+            </summary>
+            <param name="enumType">枚举类型</param>
+            <param name="getText">获得值得文本</param>
+        </member>
+        <member name="M:HWKJ.Common.Enum.EnumAdapter.GetDescription(System.Type,System.Object)">
+            <summary>
+            返回指定枚举类型的指定名称或值的描述
+            </summary>
+            <param name="type">枚举类型</param>
+            <param name="value">枚举名称或值</param>
+            <returns>枚举的描述</returns>
+        </member>
+        <member name="M:HWKJ.Common.Enum.EnumAdapter.GetCustomRequests(System.Enum)">
+            <summary>
+            扩展方法，获得枚举的CustomRequest特性
+            </summary>
+            <param name="value">枚举值</param>
+        </member>
+        <member name="T:HWKJ.Common.Enum.EnumModel">
+            <summary>
+            自定义枚举数据模型
+            </summary>
+        </member>
+        <member name="T:HWKJ.Common.Exceptions.ExceptionWithLog">
+            <summary>
+            自定义的错误异常，自动记录错误日志
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Exceptions.ExceptionWithLog.#ctor">
+            <summary>
+            构造方法-无日志
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Exceptions.ExceptionWithLog.#ctor(System.String)">
+            <summary>
+            构造方法-无日志
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Exceptions.ExceptionWithLog.#ctor(System.String,System.Exception)">
+            <summary>
+            构造方法-记录日志
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Exceptions.ExceptionWithLog.WriteLog(System.Object)">
+            <summary>
+            写入错误日志
+            </summary>
+        </member>
+        <member name="T:HWKJ.Common.CustomAttributeHelper">
+            <summary>
+            自定义Attribute帮助类
+            </summary>
+        </member>
+        <member name="F:HWKJ.Common.CustomAttributeHelper.Cache">
+            <summary>  
+            Cache Data  
+            </summary>  
+        </member>
+        <member name="M:HWKJ.Common.CustomAttributeHelper.GetCustomAttributeValue``1(System.Type,System.Func{``0,System.String})">
+            <summary>  
+            获取CustomAttribute Value  
+            </summary>  
+            <typeparam name="T">Attribute的子类型</typeparam>  
+            <param name="sourceType">头部标有CustomAttribute类的类型</param>  
+            <param name="attributeValueAction">取Attribute具体哪个属性值的匿名函数</param>  
+            <returns>返回Attribute的值，没有则返回null</returns>  
+        </member>
+        <member name="M:HWKJ.Common.CustomAttributeHelper.GetCustomAttributeValue``1(System.Type,System.Func{``0,System.String},System.String)">
+            <summary>  
+            获取CustomAttribute Value  
+            </summary>  
+            <typeparam name="T">Attribute的子类型</typeparam>  
+            <param name="sourceType">头部标有CustomAttribute类的类型</param>  
+            <param name="attributeValueAction">取Attribute具体哪个属性值的匿名函数</param>  
+            <param name="name">field name或property name</param>  
+            <returns>返回Attribute的值，没有则返回null</returns>  
+        </member>
+        <member name="M:HWKJ.Common.CustomAttributeHelper.CacheAttributeValue``1(System.Type,System.Func{``0,System.String},System.String)">
+            <summary>  
+            缓存Attribute Value  
+            </summary>  
+        </member>
+        <member name="M:HWKJ.Common.CustomAttributeHelper.BuildKey(System.Type,System.String)">
+            <summary>  
+            缓存Collection Name Key  
+            </summary>  
+        </member>
+        <member name="T:HWKJ.Common.CustomRequestAttribute">
+            <summary>
+            自定义请求地址的特性
+            </summary>
+        </member>
+        <member name="P:HWKJ.Common.CustomRequestAttribute.RuleName">
+            <summary>
+            规则名称，用于不同场景的多个规则
+            </summary>
+        </member>
+        <member name="P:HWKJ.Common.CustomRequestAttribute.ControllerName">
+            <summary>
+            控制器名称
+            </summary>
+        </member>
+        <member name="P:HWKJ.Common.CustomRequestAttribute.ActionName">
+            <summary>
+            操作名称
+            </summary>
+        </member>
+        <member name="P:HWKJ.Common.CustomRequestAttribute.Width">
+            <summary>
+            打开摸态框的宽度
+            </summary>
+        </member>
+        <member name="P:HWKJ.Common.CustomRequestAttribute.Height">
+            <summary>
+             打开摸态框的高度
+            </summary>
+        </member>
+        <member name="P:HWKJ.Common.CustomRequestAttribute.Url">
+            <summary>
+            请求地址
+            </summary>
+        </member>
+        <member name="P:HWKJ.Common.CustomRequestAttribute.BtnName">
+            <summary>
+            操作按钮名称
+            </summary>
+        </member>
+        <member name="P:HWKJ.Common.CustomRequestAttribute.RedirectionRule">
+            <summary>
+            跳转规则
+            href，onclick
+            </summary>
+        </member>
+        <member name="P:HWKJ.Common.CustomRequestAttribute.Params">
+            <summary>
+            请求参数
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.DateTimeExtend.ChinaDayOfWeek(System.DateTime)">
+            <summary>
+            符合中国习惯的DayOfWeek，周日算做7
+            </summary>
+        </member>
+        <member name="T:HWKJ.Common.ObjectExtend">
+            <summary>
+            Object类型的扩展方法
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.ObjectExtend.ChanageType(System.Object,System.Type)">
+            <summary>
+            指定格式的自定义格式转换
+            </summary>
+            <param name="value">要转换的值</param>
+            <param name="convertsionType">要转换的数据类型</param>
+        </member>
+        <member name="M:HWKJ.Common.ObjectExtend.TryChanageType(System.Object,System.Type,System.Object@)">
+            <summary>
+            尝试指定格式的自定义格式转换
+            </summary>
+            <param name="value">要转换的值</param>
+            <param name="convertsionType">要转换的数据类型</param>
+            <param name="newValue">已转换的值</param>
+            <returns>转换是否成功</returns>
+        </member>
+        <member name="T:HWKJ.Common.Helper.CGZipHelper">
+            <summary>
+            GZip压缩和解压帮助类
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Helper.CGZipHelper.CompressString(System.String)">
+            <summary>
+            将传入字符串以GZip算法压缩后，返回Base64编码字符
+            </summary>
+            <param name="rawString">需要压缩的字符串</param>
+            <returns>压缩后的Base64编码的字符串</returns>
+        </member>
+        <member name="M:HWKJ.Common.Helper.CGZipHelper.Compress(System.Byte[])">
+            <summary>
+            GZip压缩
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Helper.CGZipHelper.DecompressString(System.String)">
+            <summary>
+            将传入的二进制字符串资料以GZip算法解压缩
+            </summary>
+            <param name="zippedString">经GZip压缩后的二进制字符串</param>
+            <returns>原始未压缩字符串</returns>
+        </member>
+        <member name="M:HWKJ.Common.Helper.CGZipHelper.Decompress(System.Byte[])">
+            <summary>
+            ZIP解压
+            </summary>
+            <param name="zippedData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HWKJ.Common.Helper.CloneHelper.Clone``1(``0)">
+            <summary>
+            实现深复制
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Helper.CloneHelper.Clone``1(System.Collections.Generic.IList{``0})">
+            <summary>
+            列表扩展克隆
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Helper.DateTimeHelper.GetAge(System.DateTime)">
+            <summary>
+            根据生日取得年龄
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Helper.DateTimeHelper.ExecDateDiff(System.DateTime,System.DateTime)">
+            <summary>
+            根据日期计算时间间隔
+            </summary>
+            <param name="dateBegin">开始时间</param>
+            <param name="dateEnd">结束时间</param>
+            <returns>返回(秒)单位，比如: 0.00239秒</returns>
+        </member>
+        <member name="M:HWKJ.Common.Helper.DateTimeHelper.GetAgeAndUnit(System.DateTime,System.Int32@)">
+            <summary>
+            根据日期计算年龄和年龄单位
+            </summary>
+            <param name="birthDay">出生日期</param>
+            <param name="unit">单位</param>
+            <returns></returns>
+        </member>
+        <member name="T:HWKJ.Common.Helper.FileHelper">
+            <summary>
+            定义文件操作相关的方法类
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Helper.FileHelper.GetFolderAllFiles(System.String,System.Boolean)">
+            <summary>
+            获取指定文件夹下所有文件信息(包括子文件夹)
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Helper.FileHelper.GetFolderAllFiles(System.String,System.Collections.Generic.List{System.IO.FileInfo},System.Boolean)">
+            <summary>
+            获取指定文件夹下所有文件信息
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Helper.FileHelper.GetFileNameWithoutExtension(System.String)">
+            <summary>
+            获取不带后缀名的文件名称
+            </summary>
+        </member>
+        <member name="T:HWKJ.Common.Helper.GuidHelper">
+            <summary>
+            Guid生成器类
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Helper.GuidHelper.CreateGuid">
+            <summary>
+            创建一个COMB型主键的字符串
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Helper.GuidHelper.CreateZipGuid">
+            <summary>
+            创建一个12位的压缩GUID
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Helper.GuidHelper.CreateNew">
+            <summary>
+            创建一个COMB型主键(借鉴NHibernate中的生成写法)
+            <para>保留GUID的10个字节，用另6个字节表示GUID生成的时间，在保留GUID的唯一性的同时增加了有序性，以此来提高索引效率</para>
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Helper.HttpHelper.HttpUploadFile(System.String,System.String,System.String)">
+            <summary>
+            Http上传文件
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Helper.HttpHelper.HttpDownloadFile(System.String,System.String)">
+            <summary>
+            Http下载文件
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Helper.HttpHelper.HttpUploadFileEx(HWKJ.Common.Helper.UploadParameterType)">
+            <summary>
+            上传执行方法
+            </summary>
+            <param name="parameter">上传文件请求参数</param>
+        </member>
+        <member name="T:HWKJ.Common.Helper.UploadParameterType">
+            <summary>
+            上传文件 - 请求参数类
+            </summary>
+        </member>
+        <member name="P:HWKJ.Common.Helper.UploadParameterType.Url">
+            <summary>
+            上传地址
+            </summary>
+        </member>
+        <member name="P:HWKJ.Common.Helper.UploadParameterType.FileNameKey">
+            <summary>
+            文件名称key
+            </summary>
+        </member>
+        <member name="P:HWKJ.Common.Helper.UploadParameterType.FileNameValue">
+            <summary>
+            文件名称value
+            </summary>
+        </member>
+        <member name="P:HWKJ.Common.Helper.UploadParameterType.Encoding">
+            <summary>
+            编码格式
+            </summary>
+        </member>
+        <member name="P:HWKJ.Common.Helper.UploadParameterType.UploadStream">
+            <summary>
+            上传文件的流
+            </summary>
+        </member>
+        <member name="P:HWKJ.Common.Helper.UploadParameterType.PostParameters">
+            <summary>
+            上传文件 携带的参数集合
+            </summary>
+        </member>
+        <member name="T:HWKJ.Common.Helper.JsonHelper">
+            <summary>
+            Json使用帮助类
+            </summary>
+            <remarks>改编自网络，将来梳理</remarks>
+        </member>
+        <member name="M:HWKJ.Common.Helper.JsonHelper.IsJson(System.String)">
+            <summary>
+            判断是否是Json字符串
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Helper.JsonHelper.IsJson(System.String,System.Int32@)">
+            <summary>
+            判断是否是Json字符串
+            </summary>
+            <param name="json">待判断的Json字符串</param>
+            <param name="errIndex">错误位置</param>
+        </member>
+        <member name="M:HWKJ.Common.Helper.JsonHelper.Analysis(System.String)">
+            <summary>
+            Json字符串解析为结构化对象
+            </summary>
+            <remarks>默认会消掉转义符</remarks>
+            <param name="json">待解析的Json字符串</param>
+        </member>
+        <member name="M:HWKJ.Common.Helper.JsonHelper.GetValueLength(System.String,System.Boolean,System.Int32@)">
+            <summary>
+            获取值的长度（当Json值嵌套以"{"或"["开头时）
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Helper.JsonHelper.SetCharState(System.Char,HWKJ.Common.Helper.CharState@)">
+            <summary>
+            设置字符状态(返回true则为关键词，返回false则当为普通字符处理）
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Helper.JsonHelper.SplitEscapeArray(System.String)">
+            <summary>
+            将json数组分成字符串List
+            </summary>
+            <param name="jsonArray">["a,","bbb,,"]</param>
+        </member>
+        <member name="M:HWKJ.Common.Helper.JsonHelper.GetCharCount(System.String,System.Char)">
+            <summary>
+            获取字符在字符串出现的次数
+            </summary>
+        </member>
+        <member name="T:HWKJ.Common.Helper.CharState">
+            <summary>
+            字符状态
+            </summary>
+        </member>
+        <member name="F:HWKJ.Common.Helper.CharState.arrayStart">
+            <summary>
+            数组开始【仅第一开头才算】，值嵌套的以【childrenStart】来标识。
+            </summary>
+        </member>
+        <member name="F:HWKJ.Common.Helper.CharState.state">
+            <summary>
+            【-1 未初始化】【0 取名称中】；【1 取值中】
+            </summary>
+        </member>
+        <member name="F:HWKJ.Common.Helper.CharState.keyStart">
+            <summary>
+            【-2 已结束】【-1 未初始化】【0 未开始】【1 无引号开始】【2 单引号开始】【3 双引号开始】
+            </summary>
+        </member>
+        <member name="F:HWKJ.Common.Helper.CharState.valueStart">
+            <summary>
+            【-2 已结束】【-1 未初始化】【0 未开始】【1 无引号开始】【2 单引号开始】【3 双引号开始】
+            </summary>
+        </member>
+        <member name="T:HWKJ.Common.Helper.LogHelper">
+            <summary>
+            日志帮助类(记录简单日志信息，不采用Log4的日志系统)
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Helper.LogHelper.Info(System.String)">
+            <summary>
+            写普通日志
+            </summary>
+            <param name="info">日志内容</param>
+        </member>
+        <member name="M:HWKJ.Common.Helper.LogHelper.Error(System.String)">
+            <summary>
+            写错误日志
+            </summary>
+            <param name="error">>错误内容</param>
+        </member>
+        <member name="M:HWKJ.Common.Helper.LogHelper.Error(System.String,System.Exception)">
+            <summary>
+            写错误日志
+            </summary>
+            <param name="error">错误内容</param>
+            <param name="ex">错误异常对象</param>
+        </member>
+        <member name="M:HWKJ.Common.Helper.LogHelper.GetAllExceptionString(System.Exception)">
+            <summary>
+            获取异常错误的所有层次的错误信息
+            </summary>
+            <param name="ex">异常对象</param>
+        </member>
+        <member name="M:HWKJ.Common.Helper.LogHelper.WriteLog(System.String,System.String)">
+            <summary>
+            输出日志文件
+            </summary>
+        </member>
+        <member name="T:HWKJ.Common.Helper.PriceHelper">
+            <summary>
+            金额类型静态扩展类
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Helper.PriceHelper.ToRmbString(System.Decimal)">
+            <summary>
+            将金额转换为RMB大写的字符串
+            <remarks>按人民币的习惯，只保留2位小数</remarks>
+            <remarks>采用四舍五入的取整方式，如果需要其他的方式，需要先计算好再调用</remarks>
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Helper.PriceHelper.ToCommaString(System.Decimal,System.Int32)">
+            <summary>
+            将金额转变为千分位逗号分割的方式展现
+            <remarks>默认保留2位小数，可修改，小数位数不足的自动补0</remarks>
+            <remarks>采用Round的取整方式，如果需要其他的方式，需要先计算好再调用</remarks>
+            </summary>
+            <param name="price">输入的金额值</param>
+            <param name="digits">保留的小数位数</param>
+        </member>
+        <member name="M:HWKJ.Common.Helper.PriceHelper.ToString(System.Decimal,System.Int32)">
+            <summary>
+            将金额转变为字符串展现
+            <remarks>默认保留2位小数，可修改，小数位数不足的自动补0</remarks>
+            <remarks>采用Round的取整方式，如果需要其他的方式，需要先计算好再调用</remarks>
+            </summary>
+            <param name="price">输入的金额值</param>
+            <param name="digits">保留的小数位数</param>
+        </member>
+        <member name="M:HWKJ.Common.Helper.PriceHelper.Intercepte(System.Decimal,System.Int32,HWKJ.Common.Enum.InterceptedType)">
+            <summary>
+            公共小数位截取方法
+            </summary>
+            <param name="price">输入的金额值</param>
+            <param name="digits">保留的小数位数</param>
+            <param name="type">小数位截取方式</param>
+        </member>
+        <member name="M:HWKJ.Common.Helper.PriceHelper.Banker(System.Decimal,System.Int32)">
+            <summary>
+            银行家舍入(四舍六入五成双)的方式截取小数位
+            <example>5后非0直接进1：  123.3451 to 123.35</example>
+            <example>5后为0，5前为偶数舍去：  123.3450 to 123.34</example>
+            <example>5后为0，5前为奇数进1：  123.3550 to 123.36</example>
+            </summary>
+            <param name="price">输入的金额值</param>
+            <param name="digits">保留的小数位数</param>
+        </member>
+        <member name="M:HWKJ.Common.Helper.PriceHelper.Ceiling(System.Decimal,System.Int32)">
+            <summary>
+            取较大的值的方式截取小数位
+            </summary>
+            <param name="price">输入的金额值</param>
+            <param name="digits">保留的小数位数</param>
+        </member>
+        <member name="M:HWKJ.Common.Helper.PriceHelper.Floor(System.Decimal,System.Int32)">
+            <summary>
+            取较小的值的方式截取小数位
+            </summary>
+            <param name="price">输入的金额值</param>
+            <param name="digits">保留的小数位数</param>
+        </member>
+        <member name="M:HWKJ.Common.Helper.PriceHelper.Truncate(System.Decimal,System.Int32)">
+            <summary>
+            直接取整的方式截取小数位
+            </summary>
+            <param name="price">输入的金额值</param>
+            <param name="digits">保留的小数位数</param>
+        </member>
+        <member name="M:HWKJ.Common.Helper.PriceHelper.ChinaRound(System.Decimal,System.Int32)">
+            <summary>
+            四舍五入的方式截取小数位
+            <example>123.454 to 123.45</example>
+            <example>123.455 to 123.46</example>
+            </summary>
+            <param name="price">输入的金额值</param>
+            <param name="digits">保留的小数位数</param>
+        </member>
+        <member name="M:HWKJ.Common.Helper.PriceHelper.ReMathResult(System.Decimal,System.Int32)">
+            <summary>
+            重新计算金额，当值为0时，自动按位数最后一位置为1
+            </summary>
+        </member>
+        <member name="T:HWKJ.Common.Helper.StringHelper">
+            <summary>
+            定义字符串相关的静态方法类
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Helper.StringHelper.GetStringRealLength(System.String)">
+            <summary>
+            取得字符串真实长度
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Helper.StringHelper.CutString(System.String,System.Int32)">
+            <summary>
+            根据真实长度截取字符，效率高
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Helper.StringHelper.StringListToIntList(System.String[])">
+            <summary>
+            字符串数组转int数组
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Helper.StringHelper.GetStringCharCount(System.String,System.Char)">
+            <summary>
+            查找字符串包含几个指定字符
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Helper.StringHelper.StringTruncat(System.String,System.Int32,System.String)">
+            <summary> 
+            将指定字符串按指定长度进行截取并加上指定的后缀
+            </summary> 
+            <param name= "oldStr"> 需要截断的字符串 </param> 
+            <param name= "maxLength"> 字符串的最大长度 </param> 
+            <param name= "endWith"> 超过长度的后缀 </param>
+            <returns>如果超过长度，返回截断后的新字符串加上后缀，否则，返回原字符串</returns> 
+        </member>
+        <member name="M:HWKJ.Common.Helper.StringHelper.IsolateStringWithChar(System.String,System.Char)">
+            <summary>
+            将字符串的每一个字符用特殊符号隔开
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Helper.StringHelper.ToType(System.Type,System.String)">
+            <summary>
+            字符串转换为其他类型
+            </summary>
+            <param name="type">待换换的类型</param>
+            <param name="value">输入值</param>
+        </member>
+        <member name="M:HWKJ.Common.Helper.StringHelper.GetNum(System.String)">
+            <summary>
+            取字符串种所有的数字
+            作者：杨鹏
+            日期：2016-11-29
+            </summary>
+            <param name="strOrigin">原字符串</param>
+            <returns>原字符串中所有的数字组成的新字符串</returns>
+        </member>
+        <member name="M:HWKJ.Common.Helper.StringHelper.ParseTags(System.String)">
+            <summary>
+            移除HTML标签
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Helper.StringHelper.SplitByLen(System.String,System.Int32)">
+            <summary>
+            根据长度来分割字符串
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Helper.StringHelper.GetSubString(System.String,System.Int32,System.String)">
+            <summary>
+            按字节长度(按字节,一个汉字为2个字节)取得某字符串的一部分
+            </summary>
+            <param name="sourceString">源字符串</param>
+            <param name="length">所取字符串字节长度</param>
+            <param name="tailString">附加字符串(当字符串不够长时，尾部所添加的字符串，一般为"...")</param>
+            <returns>某字符串的一部分</returns>
+        </member>
+        <member name="M:HWKJ.Common.Helper.StringHelper.GetSubString(System.String,System.Int32,System.Int32,System.String)">
+            <summary>
+            按字节长度(按字节,一个汉字为2个字节)取得某字符串的一部分
+            </summary>
+            <param name="sourceString">源字符串</param>
+            <param name="startIndex">索引位置，以0开始</param>
+            <param name="length">所取字符串字节长度</param>
+            <param name="tailString">附加字符串(当字符串不够长时，尾部所添加的字符串，一般为"...")</param>
+            <returns>某字符串的一部分</returns>
+        </member>
+        <member name="T:HWKJ.Common.Helper.ValidationHelper">
+            <summary>
+            定义全局验证静态方法类
+            </summary>
+        </member>
+        <member name="T:HWKJ.Common.Models.CustomerHash">
+            <summary>
+            自定义Hash对象
+            </summary>
+        </member>
+        <member name="T:HWKJ.Common.Models.MsgType">
+            <summary>
+            返回对象类型枚举
+            </summary>
+        </member>
+        <member name="T:HWKJ.Common.Models.MsgModel">
+            <summary>
+            后台返回对象模型
+            </summary>
+        </member>
+        <member name="P:HWKJ.Common.Models.MsgModel.Result">
+            <summary>
+            执行是否成功
+            </summary>
+        </member>
+        <member name="P:HWKJ.Common.Models.MsgModel.Type">
+            <summary>
+            消息类型
+            </summary>
+        </member>
+        <member name="P:HWKJ.Common.Models.MsgModel.Title">
+            <summary>
+            消息标题
+            </summary>
+        </member>
+        <member name="P:HWKJ.Common.Models.MsgModel.Content">
+            <summary>
+            消息内容
+            </summary>
+        </member>
+        <member name="P:HWKJ.Common.Models.MsgModel.Extend">
+            <summary>
+            消息扩展内容
+            </summary>
+        </member>
+        <member name="P:HWKJ.Common.Models.MsgModel.Javascript">
+            <summary>
+            返回的后续执行的js语句
+            </summary>
+        </member>
+        <member name="P:HWKJ.Common.Models.MsgModel.AutoClose">
+            <summary>
+            是否自动关闭
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Models.MsgModel.#ctor(System.Boolean,HWKJ.Common.Models.MsgType,System.String)">
+            <summary>
+            构造方法
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Models.MsgModel.#ctor(System.Boolean,HWKJ.Common.Models.MsgType,System.String,System.Object)">
+            <summary>
+            构造方法
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Models.MsgModel.#ctor(System.Boolean,HWKJ.Common.Models.MsgType,System.String,System.String)">
+            <summary>
+            构造方法
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Models.MsgModel.#ctor(System.Boolean,HWKJ.Common.Models.MsgType,System.String,System.String,System.Boolean)">
+            <summary>
+            构造方法
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Models.MsgModel.#ctor(System.Boolean,HWKJ.Common.Models.MsgType,System.String,System.String,System.Object)">
+            <summary>
+            构造方法
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Models.MsgModel.#ctor">
+            <summary>
+            构造方法
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Models.MsgModel.GetDefaultTitle(HWKJ.Common.Models.MsgType)">
+            <summary>
+            根据消息类型获取默认的标题文字
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Models.MsgModel.CreateError(System.String)">
+            <summary>
+            创建一个错误提示-用于在catch错误后返回错误信息
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Models.MsgModel.CreateSuccess">
+            <summary>
+            创建一个成功提示-用于执行成功但无返回信息
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Models.MsgModel.CreateEmptySuccess">
+            <summary>
+            创建一个空的成功提示-相当于返回一个bool值
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Models.MsgModel.CreateSuccessButNoRowAffected">
+            <summary>
+            创建一个成功提示-用于执行成功但没有任何行受影响
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Models.MsgModel.CreateSuccess(System.String)">
+            <summary>
+            创建一个成功提示-用于执行成功返回信息
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Models.MsgModel.CreateSuccess(System.String,System.Object)">
+            <summary>
+            创建一个带扩展信息的成功提示-用于执行成功返回信息
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Models.MsgModel.CreateWarning(System.String)">
+            <summary>
+            创建一个警告提示-用于验证失败或执行失败后返回警告信息
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Models.MsgModel.CreateInfo(System.Boolean,System.String)">
+            <summary>
+            创建一个普通的提示
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Models.MsgModel.CreateAutoCloseInfo(System.Boolean,System.String)">
+            <summary>
+            创建一个自动关闭的提示
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Models.MsgModel.SaveChangeResult(System.Int32)">
+            <summary>
+            创建一个SaveChange的结果提示
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Models.MsgModel.SaveChangeResult(System.Int32,System.String)">
+            <summary>
+            创建一个SaveChange的结果提示
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Models.MsgModel.op_Addition(HWKJ.Common.Models.MsgModel,HWKJ.Common.Models.MsgModel)">
+            <summary>
+            扩展取2个MsgModel并集的方法(不支持MsgType=Info类型的计算)
+            <para>[Result属性：取逻辑与][AutoClose属性：只要其中一个为true，结果为true][MsgType属性：自动运算]</para> 
+            <para>[Title和Content属性：根据MsgType自动设置，可修改][Extend和Javascript属性：忽略]</para> 
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Models.MsgModel.ReBuildMsgType(HWKJ.Common.Models.MsgType,HWKJ.Common.Models.MsgType)">
+            <summary>
+            重新计算新模型的消息类型
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Models.MsgModel.SetMsgModelContent(HWKJ.Common.Models.MsgModel,HWKJ.Common.Models.MsgModel,HWKJ.Common.Models.MsgModel)">
+            <summary>
+            根据合并的2个消息设置新消息模型的Content属性
+            </summary>
+        </member>
+        <member name="T:HWKJ.Common.Models.MsgModelExtend">
+            <summary>
+            后台消息提示页面模型扩展类
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Models.MsgModelExtend.UpdateMsg(HWKJ.Common.Models.MsgModel,System.String)">
+            <summary>
+            修改MsgModel的content
+            </summary>
+            <param name="oldModel">旧的消息对象</param>
+            <param name="content">新的content值</param>
+        </member>
+        <member name="M:HWKJ.Common.Models.MsgModelExtend.SetExtend(HWKJ.Common.Models.MsgModel,System.Object)">
+            <summary>
+            为MsgModel设置扩展属性值
+            </summary>
+            <param name="model">消息对象</param>
+            <param name="extend">扩展信息</param>
+        </member>
+        <member name="T:HWKJ.Common.Models.OperateUser">
+            <summary>
+            操作人属性的集中管理类，减少调用函数的参数
+            </summary>
+        </member>
+        <member name="P:HWKJ.Common.Models.OperateUser.UserId">
+            <summary>
+            操作人ID
+            </summary>
+        </member>
+        <member name="P:HWKJ.Common.Models.OperateUser.UserGuid">
+            <summary>
+            操作人GUID
+            </summary>
+        </member>
+        <member name="P:HWKJ.Common.Models.OperateUser.UserCode">
+            <summary>
+            操作人编号(用户名)
+            </summary>
+        </member>
+        <member name="P:HWKJ.Common.Models.OperateUser.Name">
+            <summary>
+            操作人姓名
+            </summary>
+        </member>
+        <member name="P:HWKJ.Common.Models.OperateUser.RoleId">
+            <summary>
+            操作人当前登陆的角色ID
+            </summary>
+        </member>
+        <member name="P:HWKJ.Common.Models.OperateUser.RoleIds">
+            <summary>
+            操作人角色列表
+            </summary>
+        </member>
+        <member name="P:HWKJ.Common.Models.OperateUser.Hos_ID">
+            <summary>
+            操作人所在院区ID
+            </summary>
+        </member>
+        <member name="P:HWKJ.Common.Models.OperateUser.Dpt_ID">
+            <summary>
+            操作人所在部门ID
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Models.OperateUser.#ctor(System.Int64,System.String,System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="userId">用户ID</param>
+            <param name="hosId">院区ID</param>
+            <param name="dtpId">部门ID</param>
+        </member>
+        <member name="M:HWKJ.Common.Models.OperateUser.#ctor(System.String,System.String,System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="userGuid">用户GUID</param>
+            <param name="hosId">院区ID</param>
+            <param name="dtpId">部门ID</param>
+        </member>
+        <member name="M:HWKJ.Common.Models.OperateUser.#ctor">
+            <summary>
+            空构造函数
+            </summary>
+        </member>
+        <member name="T:HWKJ.Common.Tool">
+            <summary>
+            定义全局公共工具方法类
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Tool.GetResourceByKey(System.String,System.String)">
+            <summary>
+            读取资源文件的值
+            </summary>
+        </member>
+        <member name="F:HWKJ.Common.Tool._seed">
+            <summary>
+            种子算法使用的种子
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Tool.GetSeed">
+            <summary>
+            自动生成批次号-种子算法
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Tool.GetEntityType(System.Object)">
+            <summary>
+            获取一个Object对象的真实类型
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Tool.GetRandomString(System.Int32)">
+            <summary>
+            获取一个随机数字符串
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Tool.GetServerMac">
+            <summary>
+            获取服务端Mac地址
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Tool.GetCallerMethod">
+            <summary>
+            获取调用方方法名(适用于方法来调取)
+            <para>如果是在对象的只读自动属性中使用，获取StackTrace对象并调用重载方法</para>
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Tool.GetCallerMethod(System.Diagnostics.StackTrace)">
+            <summary>
+            获取调用方方法名(适用于自动属性的方式)
+            </summary>
+        </member>
+    </members>
+</doc>

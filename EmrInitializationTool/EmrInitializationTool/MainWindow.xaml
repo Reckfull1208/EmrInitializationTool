@@ -1,0 +1,18 @@
+﻿<mui:ModernWindow x:Class="EmrInitializationTool.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EmrInitializationTool"
+        mc:Ignorable="d" IsTitleVisible="True"
+        xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+        ContentSource="/Views/EmrExtend.xaml"
+        Title="MainWindow" Height="450" Width="800">
+    <mui:ModernWindow.MenuLinkGroups>
+        <mui:LinkGroup DisplayName="电子病历">
+            <mui:LinkGroup.Links>
+                <mui:Link DisplayName="病历操作" Source="/Views/EmrExtend.xaml" />
+            </mui:LinkGroup.Links>
+        </mui:LinkGroup>
+    </mui:ModernWindow.MenuLinkGroups>
+</mui:ModernWindow>

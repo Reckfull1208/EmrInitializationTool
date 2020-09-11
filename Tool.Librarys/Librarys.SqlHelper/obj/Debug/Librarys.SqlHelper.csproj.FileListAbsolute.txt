@@ -1,0 +1,11 @@
+C:\Extend\Code\RHIS.D\Git\RHIS\HWKJ.RHIS.Tools\EmrInitializationTool\EmrInitializationTool\Tool.Librarys\Librarys.SqlHelper\bin\Debug\Librarys.SqlHelper.dll
+C:\Extend\Code\RHIS.D\Git\RHIS\HWKJ.RHIS.Tools\EmrInitializationTool\EmrInitializationTool\Tool.Librarys\Librarys.SqlHelper\bin\Debug\Librarys.SqlHelper.pdb
+C:\Extend\Code\RHIS.D\Git\RHIS\HWKJ.RHIS.Tools\EmrInitializationTool\EmrInitializationTool\Tool.Librarys\Librarys.SqlHelper\bin\Debug\Librarys.CurrentInfomation.dll
+C:\Extend\Code\RHIS.D\Git\RHIS\HWKJ.RHIS.Tools\EmrInitializationTool\EmrInitializationTool\Tool.Librarys\Librarys.SqlHelper\bin\Debug\Librarys.CurrentInfomation.pdb
+C:\Extend\Code\RHIS.D\Git\RHIS\HWKJ.RHIS.Tools\EmrInitializationTool\EmrInitializationTool\Tool.Librarys\Librarys.SqlHelper\obj\Debug\Librarys.SqlHelper.csprojAssemblyReference.cache
+C:\Extend\Code\RHIS.D\Git\RHIS\HWKJ.RHIS.Tools\EmrInitializationTool\EmrInitializationTool\Tool.Librarys\Librarys.SqlHelper\obj\Debug\Librarys.SqlHelper.csproj.CoreCompileInputs.cache
+C:\Extend\Code\RHIS.D\Git\RHIS\HWKJ.RHIS.Tools\EmrInitializationTool\EmrInitializationTool\Tool.Librarys\Librarys.SqlHelper\obj\Debug\Librarys.SqlHelper.csproj.CopyComplete
+C:\Extend\Code\RHIS.D\Git\RHIS\HWKJ.RHIS.Tools\EmrInitializationTool\EmrInitializationTool\Tool.Librarys\Librarys.SqlHelper\obj\Debug\Librarys.SqlHelper.dll
+C:\Extend\Code\RHIS.D\Git\RHIS\HWKJ.RHIS.Tools\EmrInitializationTool\EmrInitializationTool\Tool.Librarys\Librarys.SqlHelper\obj\Debug\Librarys.SqlHelper.pdb
+C:\Extend\Code\RHIS.D\Git\RHIS\HWKJ.RHIS.Tools\EmrInitializationTool\EmrInitializationTool\Tool.Librarys\Librarys.SqlHelper\bin\Debug\HWKJ.Configuration.dll
+C:\Extend\Code\RHIS.D\Git\RHIS\HWKJ.RHIS.Tools\EmrInitializationTool\EmrInitializationTool\Tool.Librarys\Librarys.SqlHelper\bin\Debug\HWKJ.Configuration.xml

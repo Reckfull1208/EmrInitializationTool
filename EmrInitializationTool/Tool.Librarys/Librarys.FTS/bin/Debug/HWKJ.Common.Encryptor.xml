@@ -1,0 +1,223 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>HWKJ.Common.Encryptor</name>
+    </assembly>
+    <members>
+        <member name="T:HWKJ.Common.Encryptor.EncryptorStrategy">
+            <summary>
+            加密策略操作类
+            </summary>
+        </member>
+        <member name="P:HWKJ.Common.Encryptor.EncryptorStrategy.BaseKey">
+            <summary>
+            基础密钥
+            </summary>
+        </member>
+        <member name="P:HWKJ.Common.Encryptor.EncryptorStrategy.BaseKeyIv">
+            <summary>
+            基础密钥向量
+            </summary>
+        </member>
+        <member name="P:HWKJ.Common.Encryptor.EncryptorStrategy.AesKey">
+            <summary>
+             AES 密钥
+            </summary>
+        </member>
+        <member name="P:HWKJ.Common.Encryptor.EncryptorStrategy.AesIV">
+            <summary>
+             AES 向量
+            </summary>
+        </member>
+        <member name="P:HWKJ.Common.Encryptor.EncryptorStrategy.RC4Key">
+            <summary>
+             RC4 密钥
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Encryptor.EncryptorStrategy.#ctor(System.String,System.Byte[])">
+            <summary>
+            构造函数
+            </summary>
+            <param name="baseKey">基础密钥密文</param>
+            <param name="secondKey">二阶密钥密文</param>
+        </member>
+        <member name="M:HWKJ.Common.Encryptor.EncryptorStrategy.Encrypt(System.String,HWKJ.Common.Encryptor.EncryptorType)">
+            <summary>
+            通用加密策略加密方法(字符串)
+            </summary>
+            <param name="planText">明文字符串</param>
+            <param name="type">加密方式枚举</param>
+            <returns>密文字符串</returns>
+        </member>
+        <member name="M:HWKJ.Common.Encryptor.EncryptorStrategy.Encrypt(System.Byte[],HWKJ.Common.Encryptor.EncryptorType)">
+            <summary>
+            通用加密策略加密方法(文件流)
+            </summary>
+            <param name="fs">明文文件流</param>
+            <param name="type">加密方式枚举</param>
+            <returns>密文文件流</returns>
+        </member>
+        <member name="M:HWKJ.Common.Encryptor.EncryptorStrategy.Decrypt(System.String,HWKJ.Common.Encryptor.EncryptorType)">
+            <summary>
+            通用加密策略解密方法(字符串)
+            </summary>
+            <param name="planText">密文字符串</param>
+            <param name="type">加密方式枚举</param>
+            <returns>明文字符串</returns>
+        </member>
+        <member name="M:HWKJ.Common.Encryptor.EncryptorStrategy.Decrypt(System.Byte[],HWKJ.Common.Encryptor.EncryptorType)">
+            <summary>
+            通用加密策略解密方法(文件流)
+            </summary>
+            <param name="fs">密文文件流</param>
+            <param name="type">加密方式枚举</param>
+            <returns>明文文件流</returns>
+        </member>
+        <member name="M:HWKJ.Common.Encryptor.EncryptorStrategy.ParseBaseKey(System.String)">
+            <summary>
+            解析基础密钥
+            </summary>
+            <param name="baseKeyCipher">基础密钥密文</param>
+            <returns>操作是否成功</returns>
+        </member>
+        <member name="M:HWKJ.Common.Encryptor.EncryptorStrategy.ParseSecondKey(System.Byte[])">
+            <summary>
+            解析二阶密钥
+            </summary>
+            <param name="secondKeyCipher"></param>
+            <returns>二阶密钥</returns>
+        </member>
+        <member name="T:HWKJ.Common.Encryptor.Encryptors.RsaEncryptor">
+            <summary>
+            RSA加解密
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Encryptor.Encryptors.RsaEncryptor.Encrypt(System.String,System.String)">
+            <summary>
+            RSA加密
+            </summary>
+            <param name="publicKey">公钥</param>
+            <param name="plainText">明文</param>
+            <returns>密文</returns>
+        </member>
+        <member name="M:HWKJ.Common.Encryptor.Encryptors.RsaEncryptor.Encrypt(System.String,System.Byte[])">
+            <summary>
+            RSA加密
+            </summary>
+            <param name="publicKey">公钥</param>
+            <param name="bytes">明文</param>
+            <returns>密文</returns>
+        </member>
+        <member name="M:HWKJ.Common.Encryptor.Encryptors.RsaEncryptor.Decrypt(System.String,System.String)">
+            <summary>
+            RSA解密
+            </summary>
+            <param name="privateKey">私钥</param>
+            <param name="cipherText">密文</param>
+            <returns>明文</returns>
+        </member>
+        <member name="M:HWKJ.Common.Encryptor.Encryptors.RsaEncryptor.Decrypt(System.String,System.Byte[])">
+            <summary>
+            RAS解密
+            </summary>
+            <param name="privateKey">私钥</param>
+            <param name="bytes">密文</param>
+            <returns>明文</returns>
+        </member>
+        <member name="T:HWKJ.Common.Encryptor.Encryptors.Rc4Encryptor">
+            <summary>
+            RC4加密算法实现类
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Encryptor.Encryptors.Rc4Encryptor.Encrypt(System.String,System.Byte[])">
+            <summary>
+            RC4加密
+            </summary>
+            <param name="planText">明文</param>
+            <param name="pwd">密钥</param>
+            <returns></returns>
+        </member>
+        <member name="M:HWKJ.Common.Encryptor.Encryptors.Rc4Encryptor.Encrypt(System.Byte[],System.Byte[])">
+            <summary>
+            RC4加密
+            </summary>
+            <param name="planText">明文</param>
+            <param name="pwd">密钥</param>
+            <returns></returns>
+        </member>
+        <member name="M:HWKJ.Common.Encryptor.Encryptors.Rc4Encryptor.Decrypt(System.String,System.Byte[])">
+            <summary>
+            RC4解密
+            </summary>
+            <param name="planText">明文</param>
+            <param name="pwd">密钥</param>
+            <returns></returns>
+        </member>
+        <member name="M:HWKJ.Common.Encryptor.Encryptors.Rc4Encryptor.Decrypt(System.Byte[],System.Byte[])">
+            <summary>
+            RC4解密
+            </summary>
+            <param name="cipherText">密文</param>
+            <param name="pwd">密钥</param>
+            <returns></returns>
+        </member>
+        <member name="T:HWKJ.Common.Encryptor.EncryptorType">
+            <summary>
+            加密方式枚举
+            </summary>
+        </member>
+        <member name="T:HWKJ.Common.Encryptor.AesEncryptorRi">
+            <summary>
+            用于AES(RijndaelManaged)加密的公共帮助类
+            <remarks>RijndaelManaged（AES）算法是块式加密算法</remarks>
+            <remarks>加密输出和解密输入均采用Base64的标准</remarks>
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Encryptor.AesEncryptorRi.Encrypt(System.String,System.Byte[],System.Byte[])">
+            <summary> 
+            AES RijndaelManaged加密
+            </summary> 
+            <param name="planText">需被加密的字符串</param> 
+            <param name="key">密钥</param>
+            <param name="iv">秘钥向量(如果为null则使用默认秘钥)</param> 
+        </member>
+        <member name="M:HWKJ.Common.Encryptor.AesEncryptorRi.Encrypt(System.Byte[],System.Byte[],System.Byte[])">
+            <summary>
+            AES RijndaelManaged加密文件流
+            </summary>
+            <param name="planText">待加密的文件流</param>
+            <param name="key">密钥</param>
+            <param name="iv">秘钥向量(如果为null则使用默认秘钥)</param> 
+        </member>
+        <member name="M:HWKJ.Common.Encryptor.AesEncryptorRi.Decrypt(System.String,System.Byte[],System.Byte[])">
+            <summary> 
+            AES RijndaelManaged解密字符串
+            </summary>
+            <param name="cipherText">待解密的字符串</param>
+            <param name="key">密钥</param>
+            <param name="iv">秘钥向量(如果为null则使用默认秘钥)</param> 
+        </member>
+        <member name="M:HWKJ.Common.Encryptor.AesEncryptorRi.Decrypt(System.Byte[],System.Byte[],System.Byte[])">
+            <summary>
+            AES RijndaelManaged解密文件流
+            </summary>
+            <param name="fs">待解密的文件流</param>
+            <param name="key">密钥</param>
+            <param name="iv">秘钥向量(如果为null则使用默认秘钥)</param> 
+        </member>
+        <member name="M:HWKJ.Common.Encryptor.Util.Bytes2String(System.Byte[])">
+            <summary>
+            将Byte字节组转换为16进制的字符串表示形式
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HWKJ.Common.Encryptor.Util.String2Bytes(System.String)">
+            <summary>
+            将16进制的字符串表示形式的数据转换为Byte字节组
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

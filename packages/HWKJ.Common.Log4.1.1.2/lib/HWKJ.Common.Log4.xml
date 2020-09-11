@@ -1,0 +1,410 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>HWKJ.Common.Log4</name>
+    </assembly>
+    <members>
+        <member name="T:HWKJ.Common.Log4.DbPatternConverter">
+            <summary>
+            基于Log4Net的自定义PatternLayout
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Log4.DbPatternConverter.Convert(System.IO.TextWriter,log4net.Core.LoggingEvent)">
+            <summary>
+            重写转换方法
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Log4.DbPatternConverter.LookupProperty(System.String,log4net.Core.LoggingEvent)">
+            <summary>
+            通过反射获取传入的日志对象的某个属性的值
+            </summary>
+        </member>
+        <member name="T:HWKJ.Common.Log4.Converters.LogMessagePatternConverter">
+            <summary>
+            基于日志内容模型输出的Log4转换器
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Log4.Converters.LogMessagePatternConverter.Convert(System.IO.TextWriter,log4net.Core.LoggingEvent)">
+            <summary>
+            重写转换方法
+            </summary>
+        </member>
+        <member name="T:HWKJ.Common.Log4.DbPatternLayout">
+            <summary>
+            基于Log4Net的自定义PatternLayout，用于数据库形式的日志
+            </summary>
+        </member>
+        <member name="T:HWKJ.Common.Log4.Exceptions.ExceptionWithLog4">
+            <summary>
+            自定义的错误异常，自动记录错误日志
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Log4.Exceptions.ExceptionWithLog4.#ctor">
+            <summary>
+            构造方法-无日志
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Log4.Exceptions.ExceptionWithLog4.#ctor(System.String)">
+            <summary>
+            构造方法-记录日志
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Log4.Exceptions.ExceptionWithLog4.#ctor(System.String,System.Exception)">
+            <summary>
+            构造方法-记录日志
+            </summary>
+        </member>
+        <member name="T:HWKJ.Common.Log4.Extend.ExtendMinimalLock">
+            <summary>
+            扩展Log4Net的MinimalLock，防止空白日志文件的创建
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Log4.Extend.ExtendMinimalLock.ReleaseLock">
+            <summary>
+            重写释放锁操作
+            </summary>
+        </member>
+        <member name="T:HWKJ.Common.Log4.Layouts.LogMessageLayout">
+            <summary>
+            基于LogMessage的Layout扩展
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Log4.Layouts.LogMessageLayout.#ctor">
+            <summary>
+            //添加Convert 
+            </summary>
+        </member>
+        <member name="T:HWKJ.Common.Log4.Log4NetHelper">
+            <summary>
+            基于Log4Net的处理各种日志的帮助类
+            </summary>
+        </member>
+        <member name="F:HWKJ.Common.Log4.Log4NetHelper.RootLogger">
+            <summary>
+            基础默认Logger
+            </summary>
+        </member>
+        <member name="F:HWKJ.Common.Log4.Log4NetHelper._traceLogger">
+            <summary>
+            跟踪日志专用Logger
+            </summary>
+        </member>
+        <member name="F:HWKJ.Common.Log4.Log4NetHelper._rootLogLevel">
+            <summary>
+            全局Root日志级别
+            <remarks>如果不配置，默认为INFO级别</remarks>
+            </summary>
+        </member>
+        <member name="F:HWKJ.Common.Log4.Log4NetHelper._traceLogLevel">
+            <summary>
+            全局Trace日志级别
+            <remarks>如果不配置，默认关闭</remarks>
+            </summary>
+        </member>
+        <member name="F:HWKJ.Common.Log4.Log4NetHelper._instance">
+            <summary>
+            单例的实例
+            </summary>
+        </member>
+        <member name="P:HWKJ.Common.Log4.Log4NetHelper.Singleton">
+            <summary>  
+            单例日志对象
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Log4.Log4NetHelper.#ctor">
+            <summary>
+            私有构造函数，在程序中自定义Log4Net的配置信息
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Log4.Log4NetHelper.CreateErrorAppender">
+            <summary>
+            构建灾难和异常日志的Appender配置
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Log4.Log4NetHelper.CreateRunAppender">
+            <summary>
+            构建警告和运行日志的Appender配置
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Log4.Log4NetHelper.CreateDebugAppender">
+            <summary>
+            构建Debug日志的Appender配置
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Log4.Log4NetHelper.CreateTraceAppender">
+            <summary>
+            构建Trace日志的Appender配置
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Log4.Log4NetHelper.CreateFetalWindowsLogAppender">
+            <summary>
+            构建灾难日志的Windows日志输出方式的Appender配置
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Log4.Log4NetHelper.TransLevel">
+            <summary>
+            转换自定义级别和Log4Net的级别
+            </summary>
+        </member>
+        <member name="T:HWKJ.Common.Log4.Log4Helper">
+            <summary>
+            用于基于Log4Net的所有系统日志的操作类
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Log4.Log4Helper.Fatal(System.String)">
+            <summary>
+            写灾难日志
+            </summary>
+            <param name="message">日志内容</param>
+        </member>
+        <member name="M:HWKJ.Common.Log4.Log4Helper.Fatal(System.Exception)">
+            <summary>
+            写灾难日志
+            </summary>
+            <param name="ex">内部异常对象</param>
+        </member>
+        <member name="M:HWKJ.Common.Log4.Log4Helper.Fatal(System.String,System.Exception)">
+            <summary>
+            写灾难日志
+            </summary>
+            <param name="message">日志内容</param>
+            <param name="ex">内部异常对象</param>
+        </member>
+        <member name="M:HWKJ.Common.Log4.Log4Helper.Fatal(HWKJ.Common.Log4.LogMessage)">
+            <summary>
+            写灾难日志
+            </summary>
+            <param name="log">日志内容对象</param>
+        </member>
+        <member name="M:HWKJ.Common.Log4.Log4Helper.Fatal(HWKJ.Common.Log4.LogMessage,System.Exception)">
+            <summary>
+            写错误日志
+            </summary>
+            <param name="log">日志内容对象</param>
+            <param name="ex">内部异常对象</param>
+        </member>
+        <member name="M:HWKJ.Common.Log4.Log4Helper.Error(System.String)">
+            <summary>
+            写错误日志
+            </summary>
+            <param name="message">日志内容</param>
+        </member>
+        <member name="M:HWKJ.Common.Log4.Log4Helper.Error(System.Exception)">
+            <summary>
+            写错误日志
+            </summary>
+            <param name="ex">内部异常对象</param>
+        </member>
+        <member name="M:HWKJ.Common.Log4.Log4Helper.Error(System.String,System.Exception)">
+            <summary>
+            写错误日志
+            </summary>
+            <param name="message">日志内容</param>
+            <param name="ex">内部异常对象</param>
+        </member>
+        <member name="M:HWKJ.Common.Log4.Log4Helper.Error(HWKJ.Common.Log4.LogMessage)">
+            <summary>
+            写错误日志
+            </summary>
+            <param name="log">日志内容对象</param>
+        </member>
+        <member name="M:HWKJ.Common.Log4.Log4Helper.Error(HWKJ.Common.Log4.LogMessage,System.Exception)">
+            <summary>
+            写错误日志
+            </summary>
+            <param name="log">日志内容对象</param>
+            <param name="ex">内部异常对象</param>
+        </member>
+        <member name="M:HWKJ.Common.Log4.Log4Helper.Warn(System.String)">
+            <summary>
+            写警告日志
+            </summary>
+            <param name="message">日志内容</param>
+        </member>
+        <member name="M:HWKJ.Common.Log4.Log4Helper.Warn(System.Exception)">
+            <summary>
+            写警告日志
+            </summary>
+            <param name="ex">内部异常对象</param>
+        </member>
+        <member name="M:HWKJ.Common.Log4.Log4Helper.Warn(System.String,System.Exception)">
+            <summary>
+            写警告日志
+            </summary>
+            <param name="message">日志内容</param>
+            <param name="ex">内部异常对象</param>
+        </member>
+        <member name="M:HWKJ.Common.Log4.Log4Helper.Warn(HWKJ.Common.Log4.LogMessage)">
+            <summary>
+            写警告日志
+            </summary>
+            <param name="log">日志内容对象</param>
+        </member>
+        <member name="M:HWKJ.Common.Log4.Log4Helper.Warn(HWKJ.Common.Log4.LogMessage,System.Exception)">
+            <summary>
+            写警告日志
+            </summary>
+            <param name="log">日志内容对象</param>
+            <param name="ex">内部异常对象</param>
+        </member>
+        <member name="M:HWKJ.Common.Log4.Log4Helper.Info(System.String)">
+            <summary>
+            写普通日志
+            </summary>
+            <param name="message">普通说明</param>
+        </member>
+        <member name="M:HWKJ.Common.Log4.Log4Helper.Info(System.Exception)">
+            <summary>
+            写普通日志
+            </summary>
+            <param name="ex">内部异常对象</param>
+        </member>
+        <member name="M:HWKJ.Common.Log4.Log4Helper.Info(System.String,System.Exception)">
+            <summary>
+            写普通日志
+            </summary>
+            <param name="message">日志内容</param>
+            <param name="ex">内部异常对象</param>
+        </member>
+        <member name="M:HWKJ.Common.Log4.Log4Helper.Info(HWKJ.Common.Log4.LogMessage)">
+            <summary>
+            写普通日志
+            </summary>
+            <param name="log">日志内容对象</param>
+        </member>
+        <member name="M:HWKJ.Common.Log4.Log4Helper.Info(HWKJ.Common.Log4.LogMessage,System.Exception)">
+            <summary>
+            写普通日志
+            </summary>
+            <param name="log">日志内容对象</param>
+            <param name="ex">内部异常对象</param>
+        </member>
+        <member name="M:HWKJ.Common.Log4.Log4Helper.Debug(System.String)">
+            <summary>
+            写调试日志
+            </summary>
+            <param name="message">日志内容</param>
+        </member>
+        <member name="M:HWKJ.Common.Log4.Log4Helper.Debug(System.Exception)">
+            <summary>
+            写调试日志
+            </summary>
+            <param name="ex">内部异常对象</param>
+        </member>
+        <member name="M:HWKJ.Common.Log4.Log4Helper.Debug(System.String,System.Exception)">
+            <summary>
+            写调试日志
+            </summary>
+            <param name="message">日志内容</param>
+            <param name="ex">内部异常对象</param>
+        </member>
+        <member name="M:HWKJ.Common.Log4.Log4Helper.Debug(HWKJ.Common.Log4.LogMessage)">
+            <summary>
+            写调试日志
+            </summary>
+            <param name="log">日志内容对象</param>
+        </member>
+        <member name="M:HWKJ.Common.Log4.Log4Helper.Debug(HWKJ.Common.Log4.LogMessage,System.Exception)">
+            <summary>
+            写调试日志
+            </summary>
+            <param name="log">日志内容对象</param>
+            <param name="ex">内部异常对象</param>
+        </member>
+        <member name="M:HWKJ.Common.Log4.Log4Helper.Trace(System.String)">
+            <summary>
+            写跟踪日志
+            </summary>
+            <param name="message">日志内容</param>
+        </member>
+        <member name="M:HWKJ.Common.Log4.Log4Helper.Trace(System.Exception)">
+            <summary>
+            写跟踪日志
+            </summary>
+            <param name="ex">内部异常对象</param>
+        </member>
+        <member name="M:HWKJ.Common.Log4.Log4Helper.Trace(System.String,System.Exception)">
+            <summary>
+            写跟踪日志
+            </summary>
+            <param name="message">日志内容</param>
+            <param name="ex">内部异常对象</param>
+        </member>
+        <member name="M:HWKJ.Common.Log4.Log4Helper.Trace(HWKJ.Common.Log4.LogMessage)">
+            <summary>
+            写跟踪日志
+            </summary>
+            <param name="log">日志内容对象</param>
+        </member>
+        <member name="M:HWKJ.Common.Log4.Log4Helper.Trace(HWKJ.Common.Log4.LogMessage,System.Exception)">
+            <summary>
+            写跟踪日志
+            </summary>
+            <param name="log">日志内容对象</param>
+            <param name="ex">内部异常对象</param>
+        </member>
+        <member name="P:HWKJ.Common.Log4.Log4Helper.CanDebug">
+            <summary>
+            Log4Helper是否能写Debug日志
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Log4.Log4Helper.RunWithIngnoreException(System.Action)">
+            <summary>
+            忽略异常运行方法
+            </summary>
+        </member>
+        <member name="T:HWKJ.Common.Log4.LogMessage">
+            <summary>
+            通用日志内容对象
+            <remarks>用于根据对象定义日志内容格式</remarks>
+            </summary>
+        </member>
+        <member name="P:HWKJ.Common.Log4.LogMessage.Tag">
+            <summary>
+            日志标签
+            </summary>
+        </member>
+        <member name="P:HWKJ.Common.Log4.LogMessage.BusinessId">
+            <summary>
+            业务ID
+            </summary>
+        </member>
+        <member name="P:HWKJ.Common.Log4.LogMessage.UserId">
+            <summary>
+            操作人ID
+            </summary>
+        </member>
+        <member name="P:HWKJ.Common.Log4.LogMessage.ClientCode">
+            <summary>
+            客户端唯一标识号
+            </summary>
+        </member>
+        <member name="P:HWKJ.Common.Log4.LogMessage.Message">
+            <summary>
+            日志信息
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Log4.LogMessage.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Log4.LogMessage.#ctor(System.String)">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="T:HWKJ.Common.Log4.LogMessageExtend">
+            <summary>
+            通用日志内容对象内部扩展类
+            <remarks>定义日志内容输出方法</remarks>
+            </summary>
+        </member>
+        <member name="M:HWKJ.Common.Log4.LogMessageExtend.GetMessage(HWKJ.Common.Log4.LogMessage)">
+            <summary>
+            根据日志内容对象提取格式化的日志内容信息
+            </summary>
+            <param name="msg">日志内容对象</param>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,932 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>HWKJ.Fts.Sdk</name>
+    </assembly>
+    <members>
+        <member name="T:HWKJ.Fts.Sdk.Fts.DTOs.FTSFileInfoDTO">
+            <summary>
+            文件信息
+            </summary>
+        </member>
+        <member name="P:HWKJ.Fts.Sdk.Fts.DTOs.FTSFileInfoDTO.FileId">
+            <summary>
+            文件ID
+            </summary>
+        </member>
+        <member name="P:HWKJ.Fts.Sdk.Fts.DTOs.FTSFileInfoDTO.FileName">
+            <summary>
+            文件名称
+            </summary>
+        </member>
+        <member name="P:HWKJ.Fts.Sdk.Fts.DTOs.FTSFileInfoDTO.Url">
+            <summary>
+            文件访问地址
+            </summary>
+        </member>
+        <member name="P:HWKJ.Fts.Sdk.Fts.DTOs.FTSFileInfoDTO.FileSize">
+            <summary>
+            文件尺寸
+            </summary>
+        </member>
+        <member name="T:HWKJ.Fts.Sdk.Fts.DTOs.EncryptMethod">
+            <summary>
+            加密方式
+            </summary>
+        </member>
+        <member name="F:HWKJ.Fts.Sdk.Fts.DTOs.EncryptMethod.None">
+            <summary>
+            未加密
+            </summary>
+        </member>
+        <member name="F:HWKJ.Fts.Sdk.Fts.DTOs.EncryptMethod.AES">
+            <summary>
+            AES加密
+            </summary>
+        </member>
+        <member name="F:HWKJ.Fts.Sdk.Fts.DTOs.EncryptMethod.RC4">
+            <summary>
+            RC4加密
+            </summary>
+        </member>
+        <member name="T:HWKJ.Fts.Sdk.Fts.DTOs.FTSRequestBase">
+            <summary>
+            文件上传请求信息基类
+            </summary>
+        </member>
+        <member name="P:HWKJ.Fts.Sdk.Fts.DTOs.FTSRequestBase.Encrypt">
+            <summary>
+            是否需要加密，true：需要加密，false：无需加密，默认为false。
+            </summary>
+        </member>
+        <member name="T:HWKJ.Fts.Sdk.Fts.DTOs.FTSRequestDTO">
+            <summary>
+            用于文件上传的请求相关的参数
+            </summary>
+        </member>
+        <member name="P:HWKJ.Fts.Sdk.Fts.DTOs.FTSRequestDTO.Code">
+            <summary>
+            表示业务编码
+            </summary>
+        </member>
+        <member name="P:HWKJ.Fts.Sdk.Fts.DTOs.FTSRequestDTO.Filters">
+            <summary>
+            文件格式：文本文档|*.txt|图片|*.jpg
+            </summary>
+        </member>
+        <member name="P:HWKJ.Fts.Sdk.Fts.DTOs.FTSRequestDTO.Multiselect">
+            <summary>
+            是否可以多选，默认多选
+            </summary>
+        </member>
+        <member name="T:HWKJ.Fts.Sdk.Fts.DTOs.FTSRequestWithPathDTO">
+            <summary>
+            文件上传相关信息
+            </summary>
+        </member>
+        <member name="P:HWKJ.Fts.Sdk.Fts.DTOs.FTSRequestWithPathDTO.Path">
+            <summary>
+            文件路径
+            </summary>
+        </member>
+        <member name="P:HWKJ.Fts.Sdk.Fts.DTOs.FTSRequestWithPathDTO.CustomArgs">
+            <summary>
+            自定义参数(该参数值会在每个被触发的事件中原样传回)
+            </summary>
+        </member>
+        <member name="T:HWKJ.Fts.Sdk.Fts.DTOs.FTSResponseDTO">
+            <summary>
+            文件上传的返回值
+            </summary>
+        </member>
+        <member name="P:HWKJ.Fts.Sdk.Fts.DTOs.FTSResponseDTO.Success">
+            <summary>
+            是否已加入传输队列
+            </summary>
+        </member>
+        <member name="P:HWKJ.Fts.Sdk.Fts.DTOs.FTSResponseDTO.Ids">
+            <summary>
+            文件ID
+            </summary>
+        </member>
+        <member name="P:HWKJ.Fts.Sdk.Fts.DTOs.FTSResponseDTO.Message">
+            <summary>
+            错误消息
+            </summary>
+        </member>
+        <member name="T:HWKJ.Fts.Sdk.Fts.DTOs.FTSSmallRequestDTO">
+            <summary>
+            小文件上传队列
+            </summary>
+        </member>
+        <member name="P:HWKJ.Fts.Sdk.Fts.DTOs.FTSSmallRequestDTO.CustomerID">
+            <summary>
+            自定义ID，此ID将在文件上传完毕后直接返回，如果为空将按顺序自动生成
+            </summary>
+        </member>
+        <member name="P:HWKJ.Fts.Sdk.Fts.DTOs.FTSSmallRequestDTO.FileName">
+            <summary>
+            文件名称(如果使用FileBinary参数，则此属性必须有值)
+            </summary>
+        </member>
+        <member name="P:HWKJ.Fts.Sdk.Fts.DTOs.FTSSmallRequestDTO.FilePath">
+            <summary>
+            文件路径(FilePath、FileBinary任选一种)
+            </summary>
+        </member>
+        <member name="P:HWKJ.Fts.Sdk.Fts.DTOs.FTSSmallRequestDTO.FileBinary">
+            <summary>
+            文件字节流(FilePath、FileBinary任选一种)
+            </summary>
+        </member>
+        <member name="T:HWKJ.Fts.Sdk.Fts.DTOs.FTSSmallResponseDTO">
+            <summary>
+            文件上传的返回值
+            </summary>
+        </member>
+        <member name="P:HWKJ.Fts.Sdk.Fts.DTOs.FTSSmallResponseDTO.CustomerID">
+            <summary>
+            自定义ID
+            </summary>
+        </member>
+        <member name="P:HWKJ.Fts.Sdk.Fts.DTOs.FTSSmallResponseDTO.Success">
+            <summary>
+            是否成功
+            </summary>
+        </member>
+        <member name="P:HWKJ.Fts.Sdk.Fts.DTOs.FTSSmallResponseDTO.FileId">
+            <summary>
+            文件ID
+            </summary>
+        </member>
+        <member name="P:HWKJ.Fts.Sdk.Fts.DTOs.FTSSmallResponseDTO.Url">
+            <summary>
+            文件访问路径
+            </summary>
+        </member>
+        <member name="T:HWKJ.Fts.Sdk.Fts.DTOs.FTSTunnelInfoDTO">
+            <summary>
+            获取通道基本信息
+            </summary>
+        </member>
+        <member name="P:HWKJ.Fts.Sdk.Fts.DTOs.FTSTunnelInfoDTO.ClientID">
+            <summary>
+            通道串号
+            </summary>
+        </member>
+        <member name="T:HWKJ.Fts.Sdk.Fts.EventArgs.FileTransferErrorEventArgs">
+            <summary>
+            上传过程中发生异常的事件参数
+            </summary>
+        </member>
+        <member name="P:HWKJ.Fts.Sdk.Fts.EventArgs.FileTransferErrorEventArgs.ID">
+            <summary>
+            文件ID
+            </summary>
+        </member>
+        <member name="P:HWKJ.Fts.Sdk.Fts.EventArgs.FileTransferErrorEventArgs.Exception">
+            <summary>
+            触发的异常
+            </summary>
+        </member>
+        <member name="T:HWKJ.Fts.Sdk.Fts.EventArgs.FileTransferEventArgs">
+            <summary>
+            文件传输事件基类
+            </summary>
+        </member>
+        <member name="P:HWKJ.Fts.Sdk.Fts.EventArgs.FileTransferEventArgs.CustomArgs">
+            <summary>
+            自定义参数
+            </summary>
+        </member>
+        <member name="T:HWKJ.Fts.Sdk.Fts.EventArgs.HandingCompleteEventArgs">
+            <summary>
+            当选择文件时发生
+            </summary>
+        </member>
+        <member name="P:HWKJ.Fts.Sdk.Fts.EventArgs.HandingCompleteEventArgs.IDs">
+            <summary>
+            文件ID集合
+            </summary>
+        </member>
+        <member name="T:HWKJ.Fts.Sdk.Fts.EventArgs.HandingEventArgs">
+            <summary>
+            当选择文件时发生
+            </summary>
+        </member>
+        <member name="P:HWKJ.Fts.Sdk.Fts.EventArgs.HandingEventArgs.TempID">
+            <summary>
+            临时ID
+            </summary>
+        </member>
+        <member name="T:HWKJ.Fts.Sdk.Fts.EventArgs.ProgressEventArgs">
+            <summary>
+            上传进度
+            </summary>
+        </member>
+        <member name="P:HWKJ.Fts.Sdk.Fts.EventArgs.ProgressEventArgs.ID">
+            <summary>
+            文件ID
+            </summary>
+        </member>
+        <member name="P:HWKJ.Fts.Sdk.Fts.EventArgs.ProgressEventArgs.CompleteProgress">
+            <summary>
+            完成总进度
+            </summary>
+        </member>
+        <member name="T:HWKJ.Fts.Sdk.Fts.EventArgs.RemoveEventArgs">
+            <summary>
+            删除会话相关事件参数
+            </summary>
+        </member>
+        <member name="P:HWKJ.Fts.Sdk.Fts.EventArgs.RemoveEventArgs.ID">
+            <summary>
+            文件ID
+            </summary>
+        </member>
+        <member name="T:HWKJ.Fts.Sdk.Fts.EventArgs.StateChangeEventArgs">
+            <summary>
+            会话状态改变事件相关参数
+            </summary>
+        </member>
+        <member name="P:HWKJ.Fts.Sdk.Fts.EventArgs.StateChangeEventArgs.ID">
+            <summary>
+            文件ID
+            </summary>
+        </member>
+        <member name="P:HWKJ.Fts.Sdk.Fts.EventArgs.StateChangeEventArgs.State">
+            <summary>
+            会话状态
+            </summary>
+        </member>
+        <member name="T:HWKJ.Fts.Sdk.Fts.EventArgs.TunnelState">
+            <summary>
+            通道状态
+            </summary>
+        </member>
+        <member name="F:HWKJ.Fts.Sdk.Fts.EventArgs.TunnelState.Connecting">
+            <summary>
+            连接中
+            </summary>
+        </member>
+        <member name="F:HWKJ.Fts.Sdk.Fts.EventArgs.TunnelState.Connected">
+            <summary>
+            已连接
+            </summary>
+        </member>
+        <member name="F:HWKJ.Fts.Sdk.Fts.EventArgs.TunnelState.Reconnecting">
+            <summary>
+            重连
+            </summary>
+        </member>
+        <member name="F:HWKJ.Fts.Sdk.Fts.EventArgs.TunnelState.Disconnected">
+            <summary>
+            已断开
+            </summary>
+        </member>
+        <member name="T:HWKJ.Fts.Sdk.Fts.EventArgs.TunnelStateEventArgs">
+            <summary>
+            通道事件改变事件参数
+            </summary>
+        </member>
+        <member name="P:HWKJ.Fts.Sdk.Fts.EventArgs.TunnelStateEventArgs.ClientId">
+            <summary>
+            通道客户端ID
+            </summary>
+        </member>
+        <member name="P:HWKJ.Fts.Sdk.Fts.EventArgs.TunnelStateEventArgs.NewState">
+            <summary>
+            新状态
+            </summary>
+        </member>
+        <member name="P:HWKJ.Fts.Sdk.Fts.EventArgs.TunnelStateEventArgs.OldState">
+            <summary>
+            原状态
+            </summary>
+        </member>
+        <member name="T:HWKJ.Fts.Sdk.Fts.Models.SessionState">
+            <summary>
+            会话状态
+            </summary>
+        </member>
+        <member name="F:HWKJ.Fts.Sdk.Fts.Models.SessionState.Progressing">
+            <summary>
+            传输中
+            </summary>
+        </member>
+        <member name="F:HWKJ.Fts.Sdk.Fts.Models.SessionState.Success">
+            <summary>
+            传输成功
+            </summary>
+        </member>
+        <member name="F:HWKJ.Fts.Sdk.Fts.Models.SessionState.Failed">
+            <summary>
+            传输失败
+            </summary>
+        </member>
+        <member name="F:HWKJ.Fts.Sdk.Fts.Models.SessionState.Paused">
+            <summary>
+            已暂停
+            </summary>
+        </member>
+        <member name="F:HWKJ.Fts.Sdk.Fts.Models.SessionState.Handing">
+            <summary>
+            处理中 （计算Hash，发送首包）
+            </summary>
+        </member>
+        <member name="T:HWKJ.Fts.Sdk.Fts.Models.TransmitFlag">
+            <summary>
+            传输状态
+            </summary>
+        </member>
+        <member name="F:HWKJ.Fts.Sdk.Fts.Models.TransmitFlag.Transmitted">
+            <summary>
+            已传输
+            </summary>
+        </member>
+        <member name="F:HWKJ.Fts.Sdk.Fts.Models.TransmitFlag.NotTransmitted">
+            <summary>
+            未传输
+            </summary>
+        </member>
+        <member name="T:HWKJ.Fts.Sdk.BasicOption">
+            <summary>
+            FTS 客户端配置
+            </summary>
+        </member>
+        <member name="P:HWKJ.Fts.Sdk.BasicOption.FTSHost">
+            <summary>
+            大文件上传主机地址
+            </summary>
+        </member>
+        <member name="P:HWKJ.Fts.Sdk.BasicOption.FTSSmallFileHost">
+            <summary>
+            小文件上传主机地址
+            </summary>
+        </member>
+        <member name="P:HWKJ.Fts.Sdk.BasicOption.BlockSize">
+            <summary>
+            大文件分块尺寸，单位：KB，默认：512。
+            </summary>
+        </member>
+        <member name="P:HWKJ.Fts.Sdk.BasicOption.TaskCount">
+            <summary>
+            大文件上传时最大并行任务数，默认：5。
+            </summary>
+        </member>
+        <member name="P:HWKJ.Fts.Sdk.BasicOption.WordDir">
+            <summary>
+            FTS工作目录（用于存放临时文件和会话，默认在./FTS目录下）
+            </summary>
+        </member>
+        <member name="T:HWKJ.Fts.Sdk.FtsClientInitializer">
+            <summary>
+            FTS 客户端初始化
+            </summary>
+        </member>
+        <member name="M:HWKJ.Fts.Sdk.FtsClientInitializer.Setup(HWKJ.Fts.Sdk.BasicOption)">
+            <summary>
+            设置FTS客户端参数
+            </summary>
+            <param name="option"></param>
+        </member>
+        <member name="T:HWKJ.Fts.Sdk.Models.FileTransmitSession">
+            <summary>
+            表示文件传输会话
+            </summary>
+        </member>
+        <member name="P:HWKJ.Fts.Sdk.Models.FileTransmitSession.Id">
+            <summary>
+            文件ID
+            </summary>
+        </member>
+        <member name="P:HWKJ.Fts.Sdk.Models.FileTransmitSession.Path">
+            <summary>
+            文件物理路径
+            </summary>
+        </member>
+        <member name="P:HWKJ.Fts.Sdk.Models.FileTransmitSession.Name">
+            <summary>
+            文件名称
+            </summary>
+        </member>
+        <member name="P:HWKJ.Fts.Sdk.Models.FileTransmitSession.CustomArgs">
+            <summary>
+            自定义参数
+            </summary>
+        </member>
+        <member name="P:HWKJ.Fts.Sdk.Models.FileTransmitSession.TokenSource">
+            <summary>
+            用户任务的TokenSource
+            </summary>
+        </member>
+        <member name="P:HWKJ.Fts.Sdk.Models.FileTransmitSession.State">
+            <summary>
+            传输状态
+            </summary>
+        </member>
+        <member name="P:HWKJ.Fts.Sdk.Models.FileTransmitSession.Code">
+            <summary>
+            业务编码
+            </summary>
+        </member>
+        <member name="P:HWKJ.Fts.Sdk.Models.FileTransmitSession.Rates">
+            <summary>
+            传输进度
+            </summary>
+        </member>
+        <member name="P:HWKJ.Fts.Sdk.Models.FileTransmitSession.Hash">
+            <summary>
+            文件Hash码
+            </summary>
+        </member>
+        <member name="P:HWKJ.Fts.Sdk.Models.FileTransmitSession.CompleteProgress">
+            <summary>
+            已完成进度
+            </summary>
+        </member>
+        <member name="P:HWKJ.Fts.Sdk.Models.FileTransmitSession.BlockSize">
+            <summary>
+            块大小
+            </summary>
+        </member>
+        <member name="P:HWKJ.Fts.Sdk.Models.FileTransmitSession.TotalLength">
+            <summary>
+            总长度
+            </summary>
+        </member>
+        <member name="P:HWKJ.Fts.Sdk.Models.FileTransmitSession.BlockCount">
+            <summary>
+            块数量
+            </summary>
+        </member>
+        <member name="P:HWKJ.Fts.Sdk.Models.FileTransmitSession.Encrypt">
+            <summary>
+            加密方式
+            </summary>
+        </member>
+        <member name="M:HWKJ.Fts.Sdk.Models.FileTransmitSession.ResetProgress">
+            <summary>
+            重置进度
+            </summary>
+        </member>
+        <member name="T:HWKJ.Fts.Sdk.Session">
+            <summary>
+            会话管理
+            </summary>
+        </member>
+        <member name="M:HWKJ.Fts.Sdk.Session.Add(System.String,HWKJ.Fts.Sdk.Models.FileTransmitSession)">
+            <summary>
+            增加会话
+            </summary>
+            <param name="id">会话ID</param>
+            <param name="value">会话对象</param>
+        </member>
+        <member name="M:HWKJ.Fts.Sdk.Session.Set(System.String,HWKJ.Fts.Sdk.Models.FileTransmitSession)">
+            <summary>
+            修改会话
+            </summary>
+            <param name="id"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:HWKJ.Fts.Sdk.Session.Set(System.String,System.String,HWKJ.Fts.Sdk.Models.FileTransmitSession)">
+            <summary>
+            通过handingID修改会话
+            </summary>
+            <param name="handingID">临时ID</param>
+            <param name="id">会话ID</param>
+            <param name="value">传输会话信息</param>
+        </member>
+        <member name="M:HWKJ.Fts.Sdk.Session.Get(System.String)">
+            <summary>
+            获取会话
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HWKJ.Fts.Sdk.Session.GetAll(System.Func{HWKJ.Fts.Sdk.Models.FileTransmitSession,System.Boolean})">
+            <summary>
+            获取所有会话
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HWKJ.Fts.Sdk.Session.Remove(System.String)">
+            <summary>
+            删除会话 
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="M:HWKJ.Fts.Sdk.Session.Clear">
+            <summary>
+            清除会话
+            </summary>
+        </member>
+        <member name="M:HWKJ.Fts.Sdk.Session.Load">
+            <summary>
+            从文件中加载会话
+            </summary>
+            <param name="path"></param>
+        </member>
+        <member name="M:HWKJ.Fts.Sdk.Session.Save">
+            <summary>
+            将会话存储到硬盘上
+            </summary>
+        </member>
+        <member name="T:HWKJ.Fts.Sdk.Tunnels.ITunnel">
+            <summary>
+            通道
+            </summary>
+        </member>
+        <member name="E:HWKJ.Fts.Sdk.Tunnels.ITunnel.OnStateChange">
+            <summary>
+            通道状态改变事件
+            </summary>
+        </member>
+        <member name="M:HWKJ.Fts.Sdk.Tunnels.ITunnel.Open">
+            <summary>
+            打开通道
+            </summary>
+        </member>
+        <member name="M:HWKJ.Fts.Sdk.Tunnels.ITunnel.GetInfo">
+            <summary>
+            获取通道的基本信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HWKJ.Fts.Sdk.Tunnels.ITunnel.Request(HWKJ.FileTransmit.Common.IProtocal)">
+            <summary>
+            发送数据包
+            </summary>
+            <param name="pack"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HWKJ.Fts.Sdk.Tunnels.ITunnel.Send(HWKJ.FileTransmit.Common.IProtocal)">
+            <summary>
+            发送数据包
+            </summary>
+            <param name="pack"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HWKJ.Fts.Sdk.Tunnels.ITunnel.Remove(System.String)">
+            <summary>
+            删除
+            </summary>
+            <param name="id">文件ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:HWKJ.Fts.Sdk.Tunnels.ITunnel.Cancel(System.String)">
+            <summary>
+            取消上传
+            </summary>
+            <param name="id">文件ID</param>
+            <returns></returns>
+        </member>
+        <member name="T:HWKJ.Fts.Sdk.Tunnels.SignalRTunnel">
+            <summary>
+            通过SignalR实现的文件上传
+            </summary>
+        </member>
+        <member name="M:HWKJ.Fts.Sdk.Tunnels.SignalRTunnel.Send(HWKJ.FileTransmit.Common.IProtocal)">
+            <summary>
+            发送数据包
+            </summary>
+            <param name="pack"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HWKJ.Fts.Sdk.Tunnels.TunnelFactory.Initlize(HWKJ.Fts.Sdk.Tunnels.ITunnel)">
+            <summary>
+            初始化通道
+            </summary>
+            <param name="tunnel"></param>
+        </member>
+        <member name="T:HWKJ.Fts.Sdk.Uploaders.SmallerUploader">
+            <summary>
+            小文件上传
+            </summary>
+        </member>
+        <member name="F:HWKJ.Fts.Sdk.Uploaders.SmallerUploader.UPLOAD_PATH">
+            <summary>
+            上传文件的路径
+            </summary>
+        </member>
+        <member name="F:HWKJ.Fts.Sdk.Uploaders.SmallerUploader.UPLOAD_LOG_PATH">
+            <summary>
+            上传日志文件的路径
+            </summary>
+        </member>
+        <member name="F:HWKJ.Fts.Sdk.Uploaders.SmallerUploader.GETFILE_PATH">
+            <summary>
+            获取文件的路径
+            </summary>
+        </member>
+        <member name="F:HWKJ.Fts.Sdk.Uploaders.SmallerUploader.GETFILE_BATCH_PATH">
+            <summary>
+            批量获取文件的路径
+            </summary>
+        </member>
+        <member name="F:HWKJ.Fts.Sdk.Uploaders.SmallerUploader.REMOVE_PATH">
+            <summary>
+            删除文件的路径
+            </summary>
+        </member>
+        <member name="P:HWKJ.Fts.Sdk.Uploaders.SmallerUploader.FTSHost">
+            <summary>
+            FTS主机地址
+            </summary>
+        </member>
+        <member name="M:HWKJ.Fts.Sdk.Uploaders.SmallerUploader.Instance">
+            <summary>
+            获取实例
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HWKJ.Fts.Sdk.Uploaders.SmallerUploader.GetInfo(System.String)">
+            <summary>
+            获取文件基本信息
+            </summary>
+            <param name="id">文件ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:HWKJ.Fts.Sdk.Uploaders.SmallerUploader.GetInfo(System.String[])">
+            <summary>
+            批量获取文件基本信息
+            </summary>
+            <param name="ids">文件ID集合</param>
+            <returns></returns>
+        </member>
+        <member name="M:HWKJ.Fts.Sdk.Uploaders.SmallerUploader.Upload(System.Byte,System.String,System.Int32)">
+            <summary>
+            上传小文件
+            </summary>
+            <param name="code">业务代码,0~255</param>
+            <param name="path">文件物理路径</param>
+            <param name="timeout">超时时间，单位秒，默认30秒</param>
+            <returns></returns>
+        </member>
+        <member name="M:HWKJ.Fts.Sdk.Uploaders.SmallerUploader.Upload(System.Byte,System.Byte[],System.String,System.Int32)">
+            <summary>
+            上传小文件
+            </summary>
+            <param name="code">业务代码,0~255</param>
+            <param name="content">文件字节流</param>
+            <param name="fileName">文件名称（非路径）</param>
+            <param name="timeout">超时时间，单位秒，默认30秒</param>
+            <returns></returns>
+        </member>
+        <member name="M:HWKJ.Fts.Sdk.Uploaders.SmallerUploader.Upload(System.Byte,System.Collections.Generic.IList{HWKJ.Fts.Sdk.Fts.DTOs.FTSSmallRequestDTO},System.Int32)">
+            <summary>
+            批量上传小文件
+            </summary>
+            <param name="files">文件内容</param>
+            <param name="timeout">单个小文件上传的超时时间，单位秒，默认60秒</param>
+            <returns>文件ID的集合，顺序与传入文件的顺序一致</returns>
+            <returns></returns>
+        </member>
+        <member name="M:HWKJ.Fts.Sdk.Uploaders.SmallerUploader.UploadLog(System.Collections.Generic.IList{HWKJ.Fts.Sdk.Fts.DTOs.FTSSmallRequestDTO},System.Int32)">
+            <summary>
+            上传日志
+            </summary>
+            <param name="files">文件内容</param>
+            <param name="timeout">单个小文件上传的超时时间，单位秒，默认60秒</param>
+            <returns></returns>
+        </member>
+        <member name="M:HWKJ.Fts.Sdk.Uploaders.SmallerUploader.Remove(System.String)">
+            <summary>
+            删除文件
+            </summary>
+            <param name="id">文件ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:HWKJ.Fts.Sdk.Uploaders.SmallerUploader.Remove(System.String[])">
+            <summary>
+            删除文件
+            </summary>
+            <param name="id">文件ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:HWKJ.Fts.Sdk.Uploaders.SmallerUploader.Get(System.String)">
+            <summary>
+            发起Get请求
+            </summary>
+            <param name="url"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HWKJ.Fts.Sdk.Uploaders.SmallerUploader.Post(System.String)">
+            <summary>
+            发起Get请求
+            </summary>
+            <param name="url"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HWKJ.Fts.Sdk.Uploaders.SmallerUploader.PostFile(System.String,System.Byte[],System.String,System.Collections.Generic.Dictionary{System.String,System.String},System.Int32)">
+            <summary>
+            上传文件
+            </summary>
+            <param name="url"></param>
+            <param name="buffer"></param>
+            <param name="fileName"></param>
+            <param name="para"></param>
+            <param name="timeout"></param>
+            <returns></returns>
+        </member>
+        <member name="E:HWKJ.Fts.Sdk.Uploaders.Uploader.OnHanding">
+            <summary>
+            文件预处理时发生
+            </summary>
+        </member>
+        <member name="E:HWKJ.Fts.Sdk.Uploaders.Uploader.OnHandingFaild">
+            <summary>
+            文件预处理失败时发生
+            </summary>
+        </member>
+        <member name="E:HWKJ.Fts.Sdk.Uploaders.Uploader.OnHandingComplete">
+            <summary>
+            文件预处理完成时发生
+            </summary>
+        </member>
+        <member name="E:HWKJ.Fts.Sdk.Uploaders.Uploader.OnProgress">
+            <summary>
+            当上传进度发生变化时发生
+            </summary>
+        </member>
+        <member name="E:HWKJ.Fts.Sdk.Uploaders.Uploader.OnError">
+            <summary>
+            当上传过程中发生错误时发生
+            </summary>
+        </member>
+        <member name="E:HWKJ.Fts.Sdk.Uploaders.Uploader.OnStateChange">
+            <summary>
+            当会话的状态发生改变时发生
+            </summary>
+        </member>
+        <member name="E:HWKJ.Fts.Sdk.Uploaders.Uploader.OnRemove">
+            <summary>
+            当有文件从上传队列中移除时发生
+            </summary>
+        </member>
+        <member name="P:HWKJ.Fts.Sdk.Uploaders.Uploader.Size">
+            <summary>
+            块大小
+            </summary>
+        </member>
+        <member name="P:HWKJ.Fts.Sdk.Uploaders.Uploader.TaskCount">
+            <summary>
+            最大可同时并行的任务数量
+            </summary>
+        </member>
+        <member name="M:HWKJ.Fts.Sdk.Uploaders.Uploader.Instance">
+            <summary>
+            获取实例
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HWKJ.Fts.Sdk.Uploaders.Uploader.Initialize">
+            <summary>
+            初始化相关信息
+            </summary>
+        </member>
+        <member name="M:HWKJ.Fts.Sdk.Uploaders.Uploader.SetEncryptKeys(System.String,System.Byte[])">
+            <summary>
+            设置数据加密密钥
+            </summary>
+            <param name="baseKey">基础密钥</param>
+            <param name="secondKey">二阶密钥</param>
+        </member>
+        <member name="M:HWKJ.Fts.Sdk.Uploaders.Uploader.Upload(System.Byte,HWKJ.Fts.Sdk.Fts.DTOs.EncryptMethod,System.String[])">
+            <summary>
+            上传
+            </summary>
+            <param name="code">业务编码</param>
+            <param name="needEncrypt">是否需要加密</param>
+            <param name="paths">被上传文件的路径</param>
+        </member>
+        <member name="M:HWKJ.Fts.Sdk.Uploaders.Uploader.Upload(System.Byte,System.Collections.Generic.IList{HWKJ.Fts.Sdk.Fts.DTOs.FTSRequestWithPathDTO})">
+            <summary>
+            上传
+            </summary>
+            <param name="code">业务编码</param>
+            <param name="info">被上传文件信息</param>
+        </member>
+        <member name="M:HWKJ.Fts.Sdk.Uploaders.Uploader.Sessions(System.Func{HWKJ.Fts.Sdk.Models.FileTransmitSession,System.Boolean})">
+            <summary>
+            获取所有会话列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HWKJ.Fts.Sdk.Uploaders.Uploader.Handing(HWKJ.Fts.Sdk.Models.FileTransmitSession)">
+            <summary>
+            文件正式开始上传之前的处理（计算hax，发送文件头）
+            </summary>
+            <param name="session">传输会话</param>
+        </member>
+        <member name="M:HWKJ.Fts.Sdk.Uploaders.Uploader.Pause(System.String)">
+            <summary>
+            暂停某个会话
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="M:HWKJ.Fts.Sdk.Uploaders.Uploader.Retry(System.String)">
+            <summary>
+            重传
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="M:HWKJ.Fts.Sdk.Uploaders.Uploader.Remove(System.String)">
+            <summary>
+            停止上传任务，并删除会话
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="M:HWKJ.Fts.Sdk.Uploaders.Uploader.Stop">
+            <summary>
+            停止上传任务，并将所有会话信息写入磁盘
+            </summary>
+        </member>
+        <member name="M:HWKJ.Fts.Sdk.Uploaders.Uploader.Restart">
+            <summary>
+            从磁盘中重启会话
+            </summary>
+        </member>
+        <member name="M:HWKJ.Fts.Sdk.Uploaders.Uploader.Dispose">
+            <summary>
+            释放相关资源
+            </summary>
+        </member>
+        <member name="M:HWKJ.Fts.Sdk.Uploaders.Uploader.Runner(System.Object)">
+            <summary>
+            任务调度
+            </summary>
+            <param name="state"></param>
+        </member>
+        <member name="M:HWKJ.Fts.Sdk.Uploaders.Uploader.SendFileHead(System.String,System.String,System.String,System.Byte,System.Byte[],System.Int64,System.Int32,HWKJ.Fts.Sdk.Fts.DTOs.EncryptMethod)">
+            <summary>
+            发送文件头，并返回文件ID
+            </summary>
+            <param name="handingID">临时ID</param>
+            <param name="id">文件ID</param>
+            <param name="path">文件本地路径</param>
+            <param name="code">本地代码</param>
+            <param name="hash">文件hash码</param>
+            <param name="total_length">文件总长度</param>
+            <param name="blockCount">块数量</param>
+            <returns></returns>
+        </member>
+        <member name="M:HWKJ.Fts.Sdk.Uploaders.Uploader.Send(HWKJ.Fts.Sdk.Models.FileTransmitSession,System.Int32)">
+            <summary>
+            传输数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HWKJ.Fts.Sdk.Uploaders.Uploader.ReadBuffer(System.String,System.Int32,System.Int32,System.Int64@)">
+            <summary>
+            读取文件内容
+            </summary>
+            <param name="path"></param>
+            <param name="index"></param>
+            <param name="total_length"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HWKJ.Fts.Sdk.Uploaders.Uploader.Encrypt(System.Byte[],HWKJ.Fts.Sdk.Fts.DTOs.EncryptMethod)">
+            <summary>
+            加密数据
+            </summary>
+            <param name="cipherText">明文</param>
+            <returns>密文</returns>
+        </member>
+        <member name="M:HWKJ.Fts.Sdk.Uploaders.Uploader.CalcBlockCount(System.Int64,System.Int32,System.Boolean@)">
+            <summary>
+            根据总长度和块长度计算块数量
+            </summary>
+            <param name="total">总长度</param>
+            <param name="size">块长度</param>
+            <param name="isEndFlat">最后一块是否是整齐的</param>
+            <returns></returns>
+        </member>
+        <member name="T:HWKJ.Client.Component.Fts.Progress">
+            <summary>
+            Progress
+            </summary>
+        </member>
+        <member name="M:HWKJ.Client.Component.Fts.Progress.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:HWKJ.Client.Component.Fts.ProgressControl">
+            <summary>
+            ProgressControl
+            </summary>
+        </member>
+        <member name="M:HWKJ.Client.Component.Fts.ProgressControl.Instance">
+            <summary>
+            获取窗口实例
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HWKJ.Client.Component.Fts.ProgressControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+    </members>
+</doc>

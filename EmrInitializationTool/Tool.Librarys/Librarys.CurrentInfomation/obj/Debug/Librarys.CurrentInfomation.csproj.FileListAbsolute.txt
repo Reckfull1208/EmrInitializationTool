@@ -1,0 +1,9 @@
+C:\Extend\Code\RHIS.D\Git\RHIS\HWKJ.RHIS.Tools\EmrInitializationTool\EmrInitializationTool\Tool.Librarys\Librarys.CurrentInfomation\bin\Debug\Librarys.CurrentInfomation.dll
+C:\Extend\Code\RHIS.D\Git\RHIS\HWKJ.RHIS.Tools\EmrInitializationTool\EmrInitializationTool\Tool.Librarys\Librarys.CurrentInfomation\bin\Debug\Librarys.CurrentInfomation.pdb
+C:\Extend\Code\RHIS.D\Git\RHIS\HWKJ.RHIS.Tools\EmrInitializationTool\EmrInitializationTool\Tool.Librarys\Librarys.CurrentInfomation\obj\Debug\Librarys.CurrentInfomation.csproj.CoreCompileInputs.cache
+C:\Extend\Code\RHIS.D\Git\RHIS\HWKJ.RHIS.Tools\EmrInitializationTool\EmrInitializationTool\Tool.Librarys\Librarys.CurrentInfomation\obj\Debug\Librarys.CurrentInfomation.dll
+C:\Extend\Code\RHIS.D\Git\RHIS\HWKJ.RHIS.Tools\EmrInitializationTool\EmrInitializationTool\Tool.Librarys\Librarys.CurrentInfomation\obj\Debug\Librarys.CurrentInfomation.pdb
+C:\Extend\Code\RHIS.D\Git\RHIS\HWKJ.RHIS.Tools\EmrInitializationTool\EmrInitializationTool\Tool.Librarys\Librarys.CurrentInfomation\bin\Debug\HWKJ.Configuration.dll
+C:\Extend\Code\RHIS.D\Git\RHIS\HWKJ.RHIS.Tools\EmrInitializationTool\EmrInitializationTool\Tool.Librarys\Librarys.CurrentInfomation\bin\Debug\HWKJ.Configuration.xml
+C:\Extend\Code\RHIS.D\Git\RHIS\HWKJ.RHIS.Tools\EmrInitializationTool\EmrInitializationTool\Tool.Librarys\Librarys.CurrentInfomation\obj\Debug\Librarys.CurrentInfomation.csproj.CopyComplete
+C:\Extend\Code\RHIS.D\Git\RHIS\HWKJ.RHIS.Tools\EmrInitializationTool\EmrInitializationTool\Tool.Librarys\Librarys.CurrentInfomation\obj\Debug\Librarys.CurrentInfomation.csprojAssemblyReference.cache

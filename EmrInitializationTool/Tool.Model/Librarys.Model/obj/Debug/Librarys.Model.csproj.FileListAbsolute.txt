@@ -1,0 +1,6 @@
+C:\Extend\Code\RHIS.D\Git\RHIS\HWKJ.RHIS.Tools\EmrInitializationTool\EmrInitializationTool\Tool.Model\Librarys.Model\bin\Debug\Librarys.Model.dll
+C:\Extend\Code\RHIS.D\Git\RHIS\HWKJ.RHIS.Tools\EmrInitializationTool\EmrInitializationTool\Tool.Model\Librarys.Model\bin\Debug\Librarys.Model.pdb
+C:\Extend\Code\RHIS.D\Git\RHIS\HWKJ.RHIS.Tools\EmrInitializationTool\EmrInitializationTool\Tool.Model\Librarys.Model\obj\Debug\Librarys.Model.csproj.CoreCompileInputs.cache
+C:\Extend\Code\RHIS.D\Git\RHIS\HWKJ.RHIS.Tools\EmrInitializationTool\EmrInitializationTool\Tool.Model\Librarys.Model\obj\Debug\Librarys.Model.dll
+C:\Extend\Code\RHIS.D\Git\RHIS\HWKJ.RHIS.Tools\EmrInitializationTool\EmrInitializationTool\Tool.Model\Librarys.Model\obj\Debug\Librarys.Model.pdb
+C:\Extend\Code\RHIS.D\Git\RHIS\HWKJ.RHIS.Tools\EmrInitializationTool\EmrInitializationTool\Tool.Model\Librarys.Model\obj\Debug\Librarys.Model.csprojAssemblyReference.cache

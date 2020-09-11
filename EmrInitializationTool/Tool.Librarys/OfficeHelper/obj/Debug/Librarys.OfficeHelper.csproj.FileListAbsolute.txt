@@ -1,0 +1,14 @@
+C:\Extend\Code\RHIS.D\Git\RHIS\HWKJ.RHIS.Tools\EmrInitializationTool\EmrInitializationTool\Tool.Librarys\OfficeHelper\bin\Debug\Librarys.OfficeHelper.dll
+C:\Extend\Code\RHIS.D\Git\RHIS\HWKJ.RHIS.Tools\EmrInitializationTool\EmrInitializationTool\Tool.Librarys\OfficeHelper\bin\Debug\Librarys.OfficeHelper.pdb
+C:\Extend\Code\RHIS.D\Git\RHIS\HWKJ.RHIS.Tools\EmrInitializationTool\EmrInitializationTool\Tool.Librarys\OfficeHelper\bin\Debug\BouncyCastle.Crypto.dll
+C:\Extend\Code\RHIS.D\Git\RHIS\HWKJ.RHIS.Tools\EmrInitializationTool\EmrInitializationTool\Tool.Librarys\OfficeHelper\bin\Debug\ICSharpCode.SharpZipLib.dll
+C:\Extend\Code\RHIS.D\Git\RHIS\HWKJ.RHIS.Tools\EmrInitializationTool\EmrInitializationTool\Tool.Librarys\OfficeHelper\bin\Debug\NPOI.dll
+C:\Extend\Code\RHIS.D\Git\RHIS\HWKJ.RHIS.Tools\EmrInitializationTool\EmrInitializationTool\Tool.Librarys\OfficeHelper\bin\Debug\NPOI.OOXML.dll
+C:\Extend\Code\RHIS.D\Git\RHIS\HWKJ.RHIS.Tools\EmrInitializationTool\EmrInitializationTool\Tool.Librarys\OfficeHelper\bin\Debug\NPOI.OpenXml4Net.dll
+C:\Extend\Code\RHIS.D\Git\RHIS\HWKJ.RHIS.Tools\EmrInitializationTool\EmrInitializationTool\Tool.Librarys\OfficeHelper\bin\Debug\NPOI.OpenXmlFormats.dll
+C:\Extend\Code\RHIS.D\Git\RHIS\HWKJ.RHIS.Tools\EmrInitializationTool\EmrInitializationTool\Tool.Librarys\OfficeHelper\bin\Debug\BouncyCastle.Crypto.xml
+C:\Extend\Code\RHIS.D\Git\RHIS\HWKJ.RHIS.Tools\EmrInitializationTool\EmrInitializationTool\Tool.Librarys\OfficeHelper\obj\Debug\Librarys.OfficeHelper.csproj.CoreCompileInputs.cache
+C:\Extend\Code\RHIS.D\Git\RHIS\HWKJ.RHIS.Tools\EmrInitializationTool\EmrInitializationTool\Tool.Librarys\OfficeHelper\obj\Debug\Librarys.OfficeHelper.csproj.CopyComplete
+C:\Extend\Code\RHIS.D\Git\RHIS\HWKJ.RHIS.Tools\EmrInitializationTool\EmrInitializationTool\Tool.Librarys\OfficeHelper\obj\Debug\Librarys.OfficeHelper.dll
+C:\Extend\Code\RHIS.D\Git\RHIS\HWKJ.RHIS.Tools\EmrInitializationTool\EmrInitializationTool\Tool.Librarys\OfficeHelper\obj\Debug\Librarys.OfficeHelper.pdb
+C:\Extend\Code\RHIS.D\Git\RHIS\HWKJ.RHIS.Tools\EmrInitializationTool\EmrInitializationTool\Tool.Librarys\OfficeHelper\obj\Debug\Librarys.OfficeHelper.csprojAssemblyReference.cache
